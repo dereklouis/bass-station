@@ -32,3 +32,32 @@ p {
   color: rgb(255, 255, 255);
   font-family: 'Exo', sans-serif;
 }
+
+@font-face {
+  font-family: 'Digital-7';
+  src: url('Digital-7.eot');
+  src: url('Digital-7.eot?#iefix') format('embedded-opentype'),
+    url('Digital-7.woff2') format('woff2'), url('Digital-7.woff') format('woff'),
+    url('Digital-7.svg#Digital-7') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.testH {
+  position: absolute;
+  background-color: red;
+  height: 1px;
+  width: 136.5rem;
+  transform: translate(0rem, 16.8rem);
+}
+
+.testV {
+  position: absolute;
+  background-color: red;
+  height: 80.25rem;
+  width: 1px;
+  transform: translate(32.75rem, 0rem);
+}
+
+/* 17.7 */

@@ -2,6 +2,7 @@ import './App.css';
 import './firstQuarter.css';
 import './secondQuarter.css';
 import './lowerHalf.css';
+import './digital-7.ttf';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 
@@ -40,6 +41,30 @@ function App() {
         <p id="novation">novation</p>
         <p id="BSII">BASS STATION II</p>
         <p id="analogue">Analogue Synthesizer</p>
+        <div id="patchLine" />
+        <div id="patchLineBlock" />
+        <p id="patchL" className="buttonLabel">
+          Patch
+        </p>
+        <div id="saveB" className="button">
+          <p id="saveBL" className="buttonLabel">
+            Save
+          </p>
+        </div>
+        <div id="backB" className="button">
+          <div id="backArrow" />
+        </div>
+        <div id="forwardB" className="button">
+          <div id="nextArrow" />
+        </div>
+        <div id="valueLine" />
+        <div id="valueLineBlock" />
+        <p id="valueL">Value</p>
+        <div id="middleBar" />
+        {/* <div className="testH" />
+        <div className="testV" /> */}
+        <p id="screenNumbersBack">888</p>
+        <p id="screenNumber">124</p>
       </div>
     </div>
   );

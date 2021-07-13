@@ -34,11 +34,24 @@
   background-color: #3aadec;
 }
 
-.knobLabel {
+.knobLabel,
+.buttonLabel {
   font-weight: 400;
   margin: 0px;
   position: absolute;
   font-size: 0.9rem;
   position: absolute;
+}
+
+.knobLabel {
   transform: translateY(4rem);
+}
+
+.button {
+  background-color: rgb(30, 30, 30);
+  border-radius: 0.6rem;
+  border: 0.2rem solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
