@@ -67,6 +67,15 @@
   border-radius: 0.3rem;
 }
 
+#numberWindow {
+  width: 7.5rem;
+  height: 3.6rem;
+  position: absolute;
+  transform: translate(0.5rem, 0.45rem);
+  background-color: #292429;
+  border-radius: 0.4rem;
+}
+
 #volumeK {
   position: absolute;
   transform: translate(9rem, 6.5rem);
@@ -114,6 +123,7 @@
   height: 3.4rem;
   position: absolute;
   transform: translate(22.15rem, 12rem);
+  cursor: pointer;
 }
 
 #forwardB {
@@ -121,6 +131,7 @@
   height: 3.4rem;
   position: absolute;
   transform: translate(26.7rem, 12rem);
+  cursor: pointer;
 }
 
 #patchLine {
@@ -205,15 +216,85 @@
   opacity: 0.5;
   font-size: 4rem;
   font-family: 'Digital-7';
-  position: absolute;
-  transform: translate(20rem, 20rem);
+  margin: 0px;
+  letter-spacing: 0.2rem;
+  transform: translate(-0.4rem, 0.2rem);
+  text-align: right;
 }
 
-#screenNumber {
+.redPositioner {
+  width: 7.5rem;
+  height: 3.6rem;
+  position: absolute;
+  transform: translate(0.5rem, 0.45rem);
+  border-radius: 0.4rem;
+}
+
+.screenNumber {
   font-size: 4rem;
   font-family: 'Digital-7';
   color: #fc4e70;
-  text-shadow: 0rem 0rem 0.8rem #fc4e70;
+  margin: 0px;
+  letter-spacing: 0.2rem;
+  text-shadow: 0rem 0rem 0.8rem #fc4e70, 0rem 0rem 2rem #fc4e70;
+  text-align: right;
+}
+
+#screenNumber1 {
+  transform: translate(-0.4rem, 0.2rem);
+}
+
+#screenNumber2 {
+  transform: translate(-2.5rem, 0.2rem);
+}
+
+#screenNumber3 {
+  transform: translate(-4.6rem, 0.2rem);
+}
+
+#amountBackArrow {
+  width: 0rem;
+  height: 0rem;
+  border-top: 0.3rem solid transparent;
+  border-right: 1.08rem solid rgb(230, 230, 230);
+  border-bottom: 0.3rem solid transparent;
+  border-left: 0.3rem solid transparent;
   position: absolute;
-  transform: translate(21.2rem, 20rem);
+  transform: translate(9.1rem, 3rem);
+}
+
+#amountForwardArrow {
+  width: 0rem;
+  height: 0rem;
+  border-top: 0.3rem solid transparent;
+  border-right: 0.3rem solid transparent;
+  border-bottom: 0.3rem solid transparent;
+  border-left: 1.08rem solid rgb(230, 230, 230);
+  position: absolute;
+  transform: translate(9.5rem, 1rem);
+}
+
+#amountBackArrowLight {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  transform: translate(11.6rem, 0.85rem);
+}
+
+#amountForwardArrowLight {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  transform: translate(11.6rem, 2.85rem);
+}
+
+.amountArrowLightOff {
+  background-color: #262630;
+}
+
+.amountArrowLightOn {
+  background-color: #fc4e70;
+  box-shadow: 0rem 0rem 0.8rem #fc4e70, 0rem 0rem 2rem #fc4e70;
 }

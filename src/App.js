@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import './firstQuarter.css';
 import './secondQuarter.css';
@@ -7,6 +8,7 @@ import Knob from './knob';
 import KnobBorder from './knobBorder';
 
 function App() {
+  const [patchNumber, setPatchNumber] = useState(0);
   return (
     <div id="appContainer">
       <div id="BSMaster">
@@ -30,7 +32,30 @@ function App() {
             FILTERS
           </p>
         </div>
-        <div id="screen"></div>
+        <div id="screen">
+          <div id="numberWindow">
+            <p id="screenNumbersBack">888</p>
+          </div>
+          <div id="redPositioner1" className="redPositioner">
+            <p id="screenNumber1" className="screenNumber">
+              {Math.floor(patchNumber % 10)}
+            </p>
+          </div>
+          <div id="redPositioner2" className="redPositioner">
+            <p id="screenNumber2" className="screenNumber">
+              {patchNumber >= 10 && Math.floor((patchNumber / 10) % 10)}
+            </p>
+          </div>
+          <div id="redPositioner3" className="redPositioner">
+            <p id="screenNumber3" className="screenNumber">
+              {patchNumber >= 100 && Math.floor((patchNumber / 100) % 10)}
+            </p>
+          </div>
+          <div id="amountBackArrow" />
+          <div id="amountForwardArrow" />
+          <div id="amountBackArrowLight" className="amountArrowLightOff" />
+          <div id="amountForwardArrowLight" className="amountArrowLightOn" />
+        </div>
         <div id="volumeK">
           <KnobBorder />
           <Knob />
@@ -51,10 +76,26 @@ function App() {
             Save
           </p>
         </div>
-        <div id="backB" className="button">
+        <div
+          id="backB"
+          className="button"
+          onClick={() => {
+            if (patchNumber > 0) {
+              setPatchNumber(patchNumber - 1);
+            }
+          }}
+        >
           <div id="backArrow" />
         </div>
-        <div id="forwardB" className="button">
+        <div
+          id="forwardB"
+          className="button"
+          onClick={() => {
+            if (patchNumber < 127) {
+              setPatchNumber(patchNumber + 1);
+            }
+          }}
+        >
           <div id="nextArrow" />
         </div>
         <div id="valueLine" />
@@ -63,8 +104,6 @@ function App() {
         <div id="middleBar" />
         {/* <div className="testH" />
         <div className="testV" /> */}
-        <p id="screenNumbersBack">888</p>
-        <p id="screenNumber">124</p>
       </div>
     </div>
   );
