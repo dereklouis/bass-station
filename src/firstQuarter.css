@@ -74,3 +74,30 @@
   align-items: center;
   justify-content: center;
 }
+
+#novation {
+  font-size: 2rem;
+  margin: 0px;
+  position: absolute;
+  font-weight: 900;
+  transform: translate(7rem, 15rem);
+  letter-spacing: 0.2rem;
+}
+
+#BSII {
+  font-size: 1.03rem;
+  margin: 0px;
+  position: absolute;
+  font-weight: 600;
+  transform: translate(7rem, 17.5rem);
+  color: #3aadec;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#analogue {
+  font-size: 0.7rem;
+  margin: 0px;
+  position: absolute;
+  font-weight: 600;
+  transform: translate(9.55rem, 19.1rem);
+}

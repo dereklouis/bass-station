@@ -37,6 +37,9 @@ function App() {
             Volume
           </p>
         </div>
+        <p id="novation">novation</p>
+        <p id="BSII">BASS STATION II</p>
+        <p id="analogue">Analogue Synthesizer</p>
       </div>
     </div>
   );
