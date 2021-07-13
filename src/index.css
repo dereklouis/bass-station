@@ -31,6 +31,13 @@ code {
 p {
   color: rgb(255, 255, 255);
   font-family: 'Exo', sans-serif;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 button {
@@ -55,7 +62,7 @@ button {
   background-color: red;
   height: 1px;
   width: 136.5rem;
-  transform: translate(0rem, 16.8rem);
+  transform: translate(0rem, 7.05rem);
 }
 
 .testV {

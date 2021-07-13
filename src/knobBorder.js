@@ -15,17 +15,30 @@ const knobBorderArr = [
   ['knobBorder12', '330deg'],
 ];
 
-const KnobBorder = () => {
+const KnobBorder = (props) => {
   return (
     <div className="knobBorder">
-      {knobBorderArr.map((dot) => (
-        <div
-          className={`knobBorderDot ${dot[0]}`}
-          style={{ transform: `rotate(${dot[1]})` }}
-        >
-          <div className="knobBorderDotDot" />
-        </div>
-      ))}
+      {knobBorderArr.map((dot, idx) => {
+        if (props.highNoon & (idx === 0)) {
+          return (
+            <div
+              className={`knobBorderDot ${dot[0]}`}
+              style={{ transform: `rotate(${dot[1]})` }}
+            >
+              <div className="highNoon" />
+            </div>
+          );
+        } else {
+          return (
+            <div
+              className={`knobBorderDot ${dot[0]}`}
+              style={{ transform: `rotate(${dot[1]})` }}
+            >
+              <div className="knobBorderDotDot" />
+            </div>
+          );
+        }
+      })}
     </div>
   );
 };

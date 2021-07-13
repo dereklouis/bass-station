@@ -11,6 +11,7 @@ import OscillatorsPanel from './oscillatorsPanel';
 
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
+  const [coarseSelection, setcoarseSelection] = useState(1);
   return (
     <div id="appContainer">
       <div id="BSMaster">
@@ -34,12 +35,15 @@ function App() {
             FILTERS
           </p>
         </div>
+        <div id="middleBar" />
         <MasterPanel
           patchNumber={patchNumber}
           setPatchNumber={setPatchNumber}
         />
-        <OscillatorsPanel />
-        <div id="middleBar" />
+        <OscillatorsPanel
+          coarseSelection={coarseSelection}
+          setcoarseSelection={setcoarseSelection}
+        />
         {/* <div className="testH" />
         <div className="testV" /> */}
       </div>

@@ -1,7 +1,107 @@
 #coarseK {
   position: absolute;
-  transform: translate(36rem, 6.5rem);
+  transform: translate(35.1rem, 6.6rem);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#fineK {
+  position: absolute;
+  transform: translate(43.3rem, 6.6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#MEDK {
+  position: absolute;
+  transform: translate(51.5rem, 6.6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#LFO1K {
+  position: absolute;
+  transform: translate(59.7rem, 6.6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pulseWidthK {
+  position: absolute;
+  transform: translate(67.9rem, 6.6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#picthBox {
+  width: 7.95rem;
+  height: 1.2rem;
+  position: absolute;
+  transform: translate(54.1rem, 14rem);
+  border-bottom: 0.15rem solid white;
+  border-left: 0.15rem solid white;
+  border-right: 0.15rem solid white;
+}
+
+#picthBoxBlock {
+  position: absolute;
+  width: 3rem;
+  height: 0.75rem;
+  background-color: #141414;
+  transform: translate(57rem, 14.9rem);
+}
+
+#pitch1L {
+  transform: translate(57.5rem, 14.65rem);
+}
+
+#coarse16Bulb {
+  position: absolute;
+  transform: translate(35.3rem, 14.7rem);
+}
+
+#coarse8Bulb {
+  position: absolute;
+  transform: translate(36.8rem, 14.7rem);
+}
+
+#coarse4Bulb {
+  position: absolute;
+  transform: translate(38.3rem, 14.7rem);
+}
+
+#coarse2Bulb {
+  position: absolute;
+  transform: translate(39.8rem, 14.7rem);
+}
+
+#coarseB {
+  width: 5.1rem;
+  height: 1.5rem;
+  transform: translate(35.2rem, 16.75rem);
+}
+
+#rangeL {
+  transform: translate(36.5rem, 15.6rem);
+}
+
+#coarse16L {
+  transform: translate(35.25rem, 13.55rem);
+}
+
+#coarse8L {
+  transform: translate(36.9rem, 13.55rem);
+}
+
+#coarse4L {
+  transform: translate(38.4rem, 13.55rem);
+}
+
+#coarse2L {
+  transform: translate(39.95rem, 13.55rem);
 }

@@ -62,7 +62,7 @@
   width: 123rem;
   height: 0.3rem;
   background-color: #3aadec;
-  position: absolute;
   transform: translate(6.3rem, 19rem);
   border-radius: 0.1rem;
+  position: absolute;
 }

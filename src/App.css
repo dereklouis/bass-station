@@ -21,6 +21,22 @@
   font-size: 1.2rem;
 }
 
+.subLabelSmall {
+  font-weight: 400;
+  margin: 0px;
+  position: absolute;
+  font-size: 0.85rem;
+  position: absolute;
+}
+
+.subLabelLarge {
+  font-weight: 400;
+  margin: 0px;
+  position: absolute;
+  font-size: 0.9rem;
+  position: absolute;
+}
+
 .barBreak {
   height: 100%;
   width: 0.3rem;
@@ -41,10 +57,12 @@
   position: absolute;
   font-size: 0.9rem;
   position: absolute;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .knobLabel {
-  transform: translateY(4rem);
+  transform: translateY(3.8rem);
 }
 
 .button {

@@ -74,7 +74,9 @@ const MasterPanel = (props) => {
       </div>
       <div id="valueLine" />
       <div id="valueLineBlock" />
-      <p id="valueL">Value</p>
+      <p id="valueL" className="subLabelSmall">
+        Value
+      </p>
     </>
   );
 };
