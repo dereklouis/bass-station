@@ -54,4 +54,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: inset 0rem 0rem 0.5rem rgb(15, 15, 15);
 }

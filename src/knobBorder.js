@@ -1,4 +1,4 @@
-import './knobBorder.css';
+import './styles/knobBorder.css';
 
 const knobBorderArr = [
   ['knobBorder1', '0deg'],

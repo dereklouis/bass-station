@@ -1,4 +1,4 @@
-import './knob.css';
+import './styles/knob.css';
 
 const knobTicArr = [
   ['knobTic1', '0deg'],
