@@ -4,14 +4,13 @@ import './styles/firstQuarter.css';
 import './styles/secondQuarter.css';
 import './styles/lowerHalf.css';
 import './fonts/digital-7.ttf';
-import Knob from './knob';
-import KnobBorder from './knobBorder';
 import MasterPanel from './masterPanel';
 import OscillatorsPanel from './oscillatorsPanel';
 
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
-  const [coarseSelection, setcoarseSelection] = useState(1);
+  const [rangeSelection, setRangeSelection] = useState(1);
+  const [waveformSelection, setwaveformSelection] = useState(1);
   return (
     <div id="appContainer">
       <div id="BSMaster">
@@ -41,8 +40,10 @@ function App() {
           setPatchNumber={setPatchNumber}
         />
         <OscillatorsPanel
-          coarseSelection={coarseSelection}
-          setcoarseSelection={setcoarseSelection}
+          rangeSelection={rangeSelection}
+          setRangeSelection={setRangeSelection}
+          waveformSelection={waveformSelection}
+          setwaveformSelection={setwaveformSelection}
         />
         {/* <div className="testH" />
         <div className="testV" /> */}

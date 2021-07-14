@@ -2,9 +2,16 @@ import './styles/oscillatorsPanel.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import Bulb from './bulb';
+import SwitchAB from './switchAB';
+import SwitchABC from './switchABC';
 
 const OscillatorsPanel = (props) => {
-  const { setcoarseSelection, coarseSelection } = props;
+  const {
+    rangeSelection,
+    setRangeSelection,
+    waveformSelection,
+    setwaveformSelection,
+  } = props;
   return (
     <>
       <div id="coarseK">
@@ -48,16 +55,16 @@ const OscillatorsPanel = (props) => {
         Pitch
       </p>
       <div id="coarse16Bulb">
-        <Bulb on={coarseSelection === 1} />
+        <Bulb on={rangeSelection === 1} />
       </div>
       <div id="coarse8Bulb">
-        <Bulb on={coarseSelection === 2} />
+        <Bulb on={rangeSelection === 2} />
       </div>
       <div id="coarse4Bulb">
-        <Bulb on={coarseSelection === 3} />
+        <Bulb on={rangeSelection === 3} />
       </div>
       <div id="coarse2Bulb">
-        <Bulb on={coarseSelection === 4} />
+        <Bulb on={rangeSelection === 4} />
       </div>
       <p id="coarse16L" className="subLabelSmall">
         16'
@@ -75,16 +82,87 @@ const OscillatorsPanel = (props) => {
         Range
       </p>
       <div
-        id="coarseB"
+        id="rangeB"
         className="button"
         onClick={() => {
-          if (coarseSelection < 4) {
-            setcoarseSelection(coarseSelection + 1);
+          if (rangeSelection < 4) {
+            setRangeSelection(rangeSelection + 1);
           } else {
-            setcoarseSelection(1);
+            setRangeSelection(1);
           }
         }}
       />
+      <div id="fineSineBulb">
+        <Bulb on={waveformSelection === 1} />
+      </div>
+      <div id="fineTriBulb">
+        <Bulb on={waveformSelection === 2} />
+      </div>
+      <div id="fineSawBulb">
+        <Bulb on={waveformSelection === 3} />
+      </div>
+      <div id="fineSquareBulb">
+        <Bulb on={waveformSelection === 4} />
+      </div>
+      <p id="fineSineL" className="subLabelSmall">
+        S
+      </p>
+      <p id="fineTriL" className="subLabelSmall">
+        V
+      </p>
+      <p id="fineSawL1" className="subLabelSmall">
+        I
+      </p>
+      <p id="fineSawL2" className="subLabelSmall">
+        I
+      </p>
+      <div id="fineSquareL1" />
+      <div id="fineSquareL2" />
+      <div id="fineSquareL3" />
+      <p id="waveformL" className="subLabelSmall">
+        Waveform
+      </p>
+      <div
+        id="waveformB"
+        className="button"
+        onClick={() => {
+          if (waveformSelection < 4) {
+            setwaveformSelection(waveformSelection + 1);
+          } else {
+            setwaveformSelection(1);
+          }
+        }}
+      />
+      <p id="oscSelectL1" className="subLabelLarge">
+        1
+      </p>
+      <p id="oscSelectL2" className="subLabelLarge">
+        2
+      </p>
+      <p id="oscSelectL3" className="subLabelLarge">
+        Osc Select
+      </p>
+      <div id="oscSelectS">
+        <SwitchAB />
+      </div>
+      <p id="sync12L" className="subLabelLarge">
+        Sync 1 - 2
+      </p>
+      <div id="sync12Bulb">
+        <Bulb on={false} />
+      </div>
+      <p id="pulseWidthL1" className="subLabelLarge">
+        Mod Env
+      </p>
+      <p id="pulseWidthL2" className="subLabelLarge">
+        Manual
+      </p>
+      <p id="pulseWidthL3" className="subLabelLarge">
+        LFO 2
+      </p>
+      <div id="pulseWidthS">
+        <SwitchABC />
+      </div>
     </>
   );
 };
