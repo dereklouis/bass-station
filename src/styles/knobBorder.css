@@ -1,6 +1,6 @@
 .knobBorder {
-  width: 5.2rem;
-  height: 5.2rem;
+  width: 4.6rem;
+  height: 4.6rem;
   background-color: transparent;
   border-radius: 50%;
   display: flex;
@@ -11,8 +11,8 @@
 
 .knobBorderDot {
   position: absolute;
-  width: 5.2rem;
-  height: 5.2rem;
+  width: 4.6rem;
+  height: 4.6rem;
   background-color: transparent;
   border-radius: 50%;
   display: flex;

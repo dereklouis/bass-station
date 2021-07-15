@@ -21,6 +21,13 @@
   font-size: 1.2rem;
 }
 
+.boldLabel2 {
+  font-weight: 700;
+  margin: 0px;
+  position: absolute;
+  font-size: 1rem;
+}
+
 .subLabelSmall {
   font-weight: 400;
   margin: 0px;

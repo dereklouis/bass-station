@@ -163,6 +163,52 @@ const OscillatorsPanel = (props) => {
       <div id="pulseWidthS">
         <SwitchABC />
       </div>
+      <p id="sync12OnL" className="subLabelLarge">
+        On
+      </p>
+      <div id="subOscBar" />
+      <div id="subOscVBar" className="VBarBreak" />
+      <p id="subOscL" className="boldLabel2">
+        Sub Osc
+      </p>
+      <div id="subOscOctaveS">
+        <SwitchAB />
+      </div>
+      <div id="subOscWaveS">
+        <SwitchABC />
+      </div>
+      <p id="subOscOctaveL" className="subLabelLarge">
+        Octave
+      </p>
+      <div id="subOscOctave1B">
+        <Bulb />
+      </div>
+      <div id="subOscOctave2B">
+        <Bulb />
+      </div>
+      <div id="subOscWave1B">
+        <Bulb />
+      </div>
+      <div id="subOscWave2B">
+        <Bulb />
+      </div>
+      <div id="subOscWave3B">
+        <Bulb />
+      </div>
+      <p id="subOscOctave1L" className="subLabelSmall">
+        - 1
+      </p>
+      <p id="subOscOctave2L" className="subLabelSmall">
+        - 2
+      </p>
+      <p id="subOscSineL" className="subLabelSmall">
+        S
+      </p>
+      <div id="subOscNarrow1L" />
+      <div id="subOscNarrow2L" />
+      <div id="subOscSquare1L" />
+      <div id="subOscSquare2L" />
+      <div />
     </>
   );
 };
