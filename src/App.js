@@ -6,11 +6,14 @@ import './styles/lowerHalf.css';
 import './fonts/digital-7.ttf';
 import MasterPanel from './masterPanel';
 import OscillatorsPanel from './oscillatorsPanel';
+import Mixer from './mixer';
 
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
   const [rangeSelection, setRangeSelection] = useState(1);
   const [waveformSelection, setwaveformSelection] = useState(1);
+  const [subOscOctave, setSubOscOctave] = useState(1);
+  const [subOscWave, setSubOscWave] = useState(3);
   return (
     <div id="appContainer">
       <div id="BSMaster">
@@ -44,7 +47,12 @@ function App() {
           setRangeSelection={setRangeSelection}
           waveformSelection={waveformSelection}
           setwaveformSelection={setwaveformSelection}
+          setSubOscOctave={setSubOscOctave}
+          subOscOctave={subOscOctave}
+          setSubOscWave={setSubOscWave}
+          subOscWave={subOscWave}
         />
+        <Mixer />
         {/* <div className="testH" />
         <div className="testV" /> */}
       </div>

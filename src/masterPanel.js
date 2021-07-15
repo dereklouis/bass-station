@@ -5,7 +5,7 @@ import './styles/masterPanel.css';
 const MasterPanel = (props) => {
   const { patchNumber, setPatchNumber } = props;
   return (
-    <>
+    <div className="absolute">
       <div id="screen">
         <div id="numberWindow">
           <p id="screenNumbersBack">888</p>
@@ -30,8 +30,8 @@ const MasterPanel = (props) => {
         <div id="amountBackArrowLight" className="amountArrowLightOff" />
         <div id="amountForwardArrowLight" className="amountArrowLightOn" />
       </div>
-      <div id="volumeK">
-        <KnobBorder />
+      <div id="volumeK" className="knobDiv">
+        <KnobBorder highNoon={false} />
         <Knob />
         <p id="volumeKL" className="knobLabel">
           Volume
@@ -77,7 +77,7 @@ const MasterPanel = (props) => {
       <p id="valueL" className="subLabelSmall">
         Value
       </p>
-    </>
+    </div>
   );
 };
 

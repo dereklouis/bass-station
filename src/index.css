@@ -57,6 +57,10 @@ button {
   font-display: swap;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .testH {
   position: absolute;
   left: 0;

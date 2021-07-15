@@ -69,7 +69,7 @@
 }
 
 .knobLabel {
-  transform: translateY(3.8rem);
+  transform: translateY(3.5rem);
 }
 
 .button {
@@ -84,4 +84,10 @@
 
 .button:active {
   box-shadow: inset 0rem 0rem 0.5rem rgb(15, 15, 15);
+}
+
+.knobDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,11 +1,15 @@
 import './styles/switchAB.css';
 
-const SwitchAB = () => {
+const SwitchAB = (props) => {
+  const key = {
+    A: 'switchABKnobPosA',
+    B: 'switchABKnobPosB',
+  };
   return (
     <div className="switchABMaster">
       <div className="switchABRounder">
         <div className="swtchABTrack">
-          <div className="switchABKnob switchABKnobPosA" />
+          <div className={`switchABKnob ${key[props.position]}`} />
         </div>
       </div>
     </div>

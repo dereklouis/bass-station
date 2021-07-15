@@ -11,38 +11,42 @@ const OscillatorsPanel = (props) => {
     setRangeSelection,
     waveformSelection,
     setwaveformSelection,
+    subOscOctave,
+    setSubOscOctave,
+    subOscWave,
+    setSubOscWave,
   } = props;
   return (
-    <>
-      <div id="coarseK">
+    <div className="absolute">
+      <div id="coarseK" className="knobDiv">
         <KnobBorder highNoon={true} />
         <Knob />
         <p id="coarseKL" className="knobLabel">
           Coarse
         </p>
       </div>
-      <div id="fineK">
+      <div id="fineK" className="knobDiv">
         <KnobBorder highNoon={true} />
         <Knob />
         <p id="fineKL" className="knobLabel">
           Fine
         </p>
       </div>
-      <div id="MEDK">
+      <div id="MEDK" className="knobDiv">
         <KnobBorder highNoon={true} />
         <Knob />
         <p id="MEDKL" className="knobLabel">
           Mod Env depth
         </p>
       </div>
-      <div id="LFO1K">
+      <div id="LFO1K" className="knobDiv">
         <KnobBorder highNoon={true} />
         <Knob />
         <p id="LFO1KL" className="knobLabel">
           LFO 1 depth
         </p>
       </div>
-      <div id="pulseWidthK">
+      <div id="pulseWidthK" className="knobDiv">
         <KnobBorder highNoon={true} />
         <Knob />
         <p id="pulseWidthKL" className="knobLabel">
@@ -50,7 +54,7 @@ const OscillatorsPanel = (props) => {
         </p>
       </div>
       <div id="picthBox" />
-      <div id="picthBoxBlock" />
+      <div id="pitchBoxBlock" />
       <p id="pitch1L" className="subLabelLarge">
         Pitch
       </p>
@@ -157,6 +161,7 @@ const OscillatorsPanel = (props) => {
       <p id="pulseWidthL2" className="subLabelLarge">
         Manual
       </p>
+      <div id="pulseWidthLineSplit" />
       <p id="pulseWidthL3" className="subLabelLarge">
         LFO 2
       </p>
@@ -172,28 +177,28 @@ const OscillatorsPanel = (props) => {
         Sub Osc
       </p>
       <div id="subOscOctaveS">
-        <SwitchAB />
+        <SwitchAB position={'A'} />
       </div>
       <div id="subOscWaveS">
-        <SwitchABC />
+        <SwitchABC position={'C'} />
       </div>
       <p id="subOscOctaveL" className="subLabelLarge">
         Octave
       </p>
       <div id="subOscOctave1B">
-        <Bulb />
+        <Bulb on={subOscOctave === 1} />
       </div>
       <div id="subOscOctave2B">
-        <Bulb />
+        <Bulb on={subOscOctave === 2} />
       </div>
       <div id="subOscWave1B">
-        <Bulb />
+        <Bulb on={subOscWave === 1} />
       </div>
       <div id="subOscWave2B">
-        <Bulb />
+        <Bulb on={subOscWave === 2} />
       </div>
       <div id="subOscWave3B">
-        <Bulb />
+        <Bulb on={subOscWave === 3} />
       </div>
       <p id="subOscOctave1L" className="subLabelSmall">
         - 1
@@ -209,7 +214,7 @@ const OscillatorsPanel = (props) => {
       <div id="subOscSquare1L" />
       <div id="subOscSquare2L" />
       <div />
-    </>
+    </div>
   );
 };
 
