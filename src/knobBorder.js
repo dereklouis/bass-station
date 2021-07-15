@@ -1,19 +1,10 @@
 import './styles/knobBorder.css';
 
-const knobBorderArr = [
-  ['knobBorder1', '0deg'],
-  ['knobBorder2', '30deg'],
-  ['knobBorder3', '60deg'],
-  ['knobBorder4', '90deg'],
-  ['knobBorder5', '120deg'],
-  ['knobBorder6', '150deg'],
-  ['knobBorder7', '180deg'],
-  ['knobBorder8', '210deg'],
-  ['knobBorder9', '240deg'],
-  ['knobBorder10', '270deg'],
-  ['knobBorder11', '300deg'],
-  ['knobBorder12', '330deg'],
-];
+const knobBorderArr = [];
+
+for (let i = 0; i < 12; i++) {
+  knobBorderArr.push(1);
+}
 
 const KnobBorder = (props) => {
   return (
@@ -22,8 +13,8 @@ const KnobBorder = (props) => {
         if (props.highNoon & (idx === 0)) {
           return (
             <div
-              className={`knobBorderDot ${dot[0]}`}
-              style={{ transform: `rotate(${dot[1]})` }}
+              className={`knobBorderDot knobBorder${idx + 1}`}
+              style={{ transform: `rotate(${idx * 30}deg)` }}
             >
               <div className="highNoon" />
             </div>
@@ -31,8 +22,8 @@ const KnobBorder = (props) => {
         } else {
           return (
             <div
-              className={`knobBorderDot ${dot[0]}`}
-              style={{ transform: `rotate(${dot[1]})` }}
+              className={`knobBorderDot knobBorder${idx + 1}`}
+              style={{ transform: `rotate(${idx * 30}deg)` }}
             >
               <div className="knobBorderDotDot" />
             </div>

@@ -36,6 +36,14 @@
   position: absolute;
 }
 
+.subLabelXSmall {
+  font-weight: 400;
+  margin: 0px;
+  position: absolute;
+  font-size: 0.8rem;
+  position: absolute;
+}
+
 .subLabelLarge {
   font-weight: 400;
   margin: 0px;
@@ -90,4 +98,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
 }

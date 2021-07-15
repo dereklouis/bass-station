@@ -11,10 +11,14 @@ import Filters from './filters';
 
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
-  const [rangeSelection, setRangeSelection] = useState(1);
-  const [waveformSelection, setwaveformSelection] = useState(1);
+  const [rangeSelection, setRangeSelection] = useState(2);
+  const [waveformSelection, setwaveformSelection] = useState(3);
   const [subOscOctave, setSubOscOctave] = useState(1);
   const [subOscWave, setSubOscWave] = useState(3);
+  const [filtersType, setFiltersType] = useState(1);
+  const [filtersSlope, setFiltersSlope] = useState(2);
+  const [filtersShape, setFiltersShape] = useState(1);
+
   return (
     <div id="appContainer">
       <div id="BSMaster">
@@ -54,7 +58,14 @@ function App() {
           subOscWave={subOscWave}
         />
         <Mixer />
-        <Filters />
+        <Filters
+          filtersType={filtersType}
+          setFiltersType={setFiltersType}
+          filtersSlope={filtersSlope}
+          setFiltersSlope={setFiltersSlope}
+          filtersShape={filtersShape}
+          setFiltersShape={setFiltersShape}
+        />
         {/* <div className="testH" />
         <div className="testV" /> */}
       </div>

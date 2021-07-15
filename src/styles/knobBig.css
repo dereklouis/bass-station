@@ -1,6 +1,6 @@
-.knobMaster {
-  width: 4.05rem;
-  height: 4.05rem;
+.knobBigMaster {
+  width: 8.4rem;
+  height: 8.4rem;
   position: absolute;
   background-color: rgb(32, 32, 32);
   border-radius: 50%;
@@ -12,9 +12,9 @@
   transform: translateY(-0.1rem);
 }
 
-.knobRise {
-  width: 2.7rem;
-  height: 2.7rem;
+.knobBigRise {
+  width: 7.2rem;
+  height: 7.2rem;
   border-radius: 50%;
   position: absolute;
   z-index: 1;
@@ -26,9 +26,9 @@
     inset -0.2rem -0.2rem 1rem 0rem rgb(0, 0, 0);
 }
 
-.knobWhite {
-  width: 1.89rem;
-  height: 1.89rem;
+.knobBigWhite {
+  width: 5.7rem;
+  height: 5.7rem;
   border-radius: 50%;
   background-color: rgb(230, 230, 230);
   display: flex;
@@ -36,9 +36,9 @@
   justify-content: center;
 }
 
-.knobTics {
-  width: 2.7rem;
-  height: 2.7rem;
+.knobBigTics {
+  width: 7.2rem;
+  height: 7.2rem;
   border-radius: 50%;
   position: absolute;
   z-index: 0;
@@ -48,16 +48,16 @@
   background-color: transparent;
 }
 
-.knobTicWhite {
+.knobBigTicWhite {
   width: 0.27rem;
-  height: 0.6rem;
+  height: 1rem;
   background-color: rgb(230, 230, 230);
   position: absolute;
   transform: translateY(-100%);
   border-radius: 0.5rem 0.5rem 0rem 0rem;
 }
 
-.knobTic {
+.knobBigTic {
   width: 0.36rem;
   height: 0.36rem;
   border-radius: 50%;
@@ -65,6 +65,6 @@
   transform: translate(0rem, -33%);
 }
 
-.knobTic1 {
+.knobBigTic1 {
   display: none;
 }
