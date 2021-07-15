@@ -280,13 +280,13 @@
 #subOscWave2B {
   position: absolute;
   top: 0;
-  transform: translate(69.8rem, 15.2rem);
+  transform: translate(69.8rem, 15.1rem);
 }
 
 #subOscWave3B {
   position: absolute;
   top: 0;
-  transform: translate(69.8rem, 16.9rem);
+  transform: translate(69.8rem, 16.7rem);
 }
 
 #subOscOctave1L {
@@ -312,7 +312,7 @@
   height: 0.7rem;
   border-left: 0.1rem solid white;
   border-top: 0.1rem solid white;
-  transform: translate(70.9rem, 15.4rem);
+  transform: translate(70.9rem, 15.3rem);
 }
 
 #subOscNarrow2L {
@@ -323,7 +323,7 @@
   border-left: 0.1rem solid white;
   border-bottom: 0.1rem solid white;
   border-right: 0.1rem solid white;
-  transform: translate(71.2rem, 15.4rem);
+  transform: translate(71.2rem, 15.3rem);
 }
 
 #subOscSquare1L {
@@ -333,7 +333,7 @@
   height: 0.7rem;
   border-left: 0.1rem solid white;
   border-top: 0.1rem solid white;
-  transform: translate(70.9rem, 17.15rem);
+  transform: translate(70.9rem, 16.95rem);
 }
 
 #subOscSquare2L {
@@ -344,5 +344,5 @@
   border-left: 0.1rem solid white;
   border-bottom: 0.1rem solid white;
   border-right: 0.1rem solid white;
-  transform: translate(71.3rem, 17.15rem);
+  transform: translate(71.3rem, 16.95rem);
 }

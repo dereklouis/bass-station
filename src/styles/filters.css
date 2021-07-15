@@ -1,0 +1,14 @@
+#filtersTypeS {
+  position: absolute;
+  transform: translate(95rem, 7rem);
+}
+
+#filtersSlopeS {
+  position: absolute;
+  transform: translate(95rem, 11rem);
+}
+
+#filtersShapeS {
+  position: absolute;
+  transform: translate(94.8rem, 15rem);
+}

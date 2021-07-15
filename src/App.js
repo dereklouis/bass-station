@@ -7,6 +7,7 @@ import './fonts/digital-7.ttf';
 import MasterPanel from './masterPanel';
 import OscillatorsPanel from './oscillatorsPanel';
 import Mixer from './mixer';
+import Filters from './filters';
 
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
@@ -53,6 +54,7 @@ function App() {
           subOscWave={subOscWave}
         />
         <Mixer />
+        <Filters />
         {/* <div className="testH" />
         <div className="testV" /> */}
       </div>
