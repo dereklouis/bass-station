@@ -9,21 +9,21 @@ const Mixer = () => {
       <div id="mixerOsc1K" className="knobDiv">
         <KnobBorder highNoon={false} />
         <Knob />
-        <p id="mixerOsc1L" className="knobLabel">
+        <p id="mixerOsc1KL" className="knobLabel">
           Osc 1
         </p>
       </div>
       <div id="mixerOsc2K" className="knobDiv">
         <KnobBorder highNoon={false} />
         <Knob />
-        <p id="mixerOsc2L" className="knobLabel">
+        <p id="mixerOsc2KL" className="knobLabel">
           Osc 2
         </p>
       </div>
       <div id="mixerSubK" className="knobDiv">
         <KnobBorder highNoon={false} />
         <Knob />
-        <p id="mixerSubL" className="knobLabel">
+        <p id="mixerSubKL" className="knobLabel">
           Sub Osc
         </p>
       </div>

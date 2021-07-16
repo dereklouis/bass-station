@@ -5,10 +5,12 @@ import './styles/secondQuarter.css';
 import './styles/lowerHalf.css';
 import './fonts/digital-7.ttf';
 import MasterPanel from './masterPanel';
-import OscillatorsPanel from './oscillatorsPanel';
+import Oscillators from './oscillatorsPanel';
 import Mixer from './mixer';
 import Filters from './filters';
 import Arpeggiator from './arpeggiator';
+import Porta from './porta';
+import Lfos from './lfos';
 
 function App() {
   return (
@@ -36,10 +38,12 @@ function App() {
         </div>
         <div id="mainBarBottom" />
         <MasterPanel />
-        <OscillatorsPanel />
+        <Oscillators />
         <Mixer />
         <Filters />
         <Arpeggiator />
+        <Porta />
+        <Lfos />
         <div id="midBar">
           <p id="arpeggiatorL" className="boldLabel">
             ARPEGGIATOR

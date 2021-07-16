@@ -38,7 +38,6 @@
   transform: translate(7rem, 16.5rem);
   color: #3aadec;
   font-family: 'Orbitron', sans-serif;
-  white-space: nowrap;
 }
 
 #analogue {
@@ -47,7 +46,6 @@
   position: absolute;
   font-weight: 600;
   transform: translate(9.5rem, 17.9rem);
-  white-space: nowrap;
 }
 
 #saveB {

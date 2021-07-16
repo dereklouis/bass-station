@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import './styles/arpeggiator.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import Bulb from './bulb';
 
 const Arpeggiator = () => {
+  const [legatoStatus, setLegatoStatus] = useState(false);
+  const [latchStatus, setLatchStatus] = useState(false);
   return (
     <div className="absolute">
       <div id="tempoK" className="knobDiv">
         <KnobBorder highNoon={false} />
         <Knob />
-        <p id="tempoL" className="knobLabel">
+        <p id="tempoKL" className="knobLabel">
           Tempo
         </p>
       </div>
@@ -23,27 +26,39 @@ const Arpeggiator = () => {
         <Bulb blinkClass={'tempoBlink'} />
       </div>
       <div id="arpLegatoBulb">
-        <Bulb />
+        <Bulb on={legatoStatus} />
       </div>
-      <div id="arpOnB" className="button">
+      <div
+        id="arpOnB"
+        className="button"
+        onClick={() => {
+          setLegatoStatus(!legatoStatus);
+        }}
+      >
         <p id="arpOnL">On</p>
       </div>
       <p id="arpLegatoL" className="whiteBoxL">
         Legato
       </p>
-      <div id="arpLatchB" className="button">
+      <div
+        id="arpLatchB"
+        className="button"
+        onClick={() => {
+          setLatchStatus(!latchStatus);
+        }}
+      >
         <p id="arpLatchL">Latch</p>
       </div>
       <p id="arpRestL" className="whiteBoxL">
         Rest
       </p>
       <div id="arpLatchBulb">
-        <Bulb />
+        <Bulb on={latchStatus} />
       </div>
       <div id="rhythmK" className="knobDiv">
         <KnobBorder highNoon={false} />
         <Knob />
-        <p id="rhythmL" className="knobLabel">
+        <p id="rhythmKL" className="knobLabel">
           Rhythm
         </p>
       </div>

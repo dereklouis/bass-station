@@ -143,9 +143,9 @@
   transform: translate(45.9rem, 11.55rem);
   width: 0.7rem;
   height: 0.55rem;
-  border-top: 0.15rem solid white;
-  border-left: 0.15rem solid white;
-  border-right: 0.15rem solid white;
+  border-top: 0.15rem solid rgb(240, 240, 240);
+  border-left: 0.15rem solid rgb(240, 240, 240);
+  border-right: 0.15rem solid rgb(240, 240, 240);
 }
 
 #fineSquareL2 {
@@ -153,8 +153,8 @@
   transform: translate(46.8rem, 11.55rem);
   width: 0.3rem;
   height: 0.55rem;
-  border-bottom: 0.15rem solid white;
-  border-right: 0.15rem solid white;
+  border-bottom: 0.15rem solid rgb(240, 240, 240);
+  border-right: 0.15rem solid rgb(240, 240, 240);
 }
 
 #fineSquareL3 {
@@ -162,8 +162,8 @@
   transform: translate(46.5rem, 11.55rem);
   width: 0.3rem;
   height: 0.55rem;
-  border-bottom: 0.15rem dotted white;
-  border-left: 0.15rem dotted white;
+  border-bottom: 0.15rem dotted rgb(240, 240, 240);
+  border-left: 0.15rem dotted rgb(240, 240, 240);
 }
 
 #oscSelectS {
@@ -192,31 +192,31 @@
 }
 
 #pulseWidthS {
-  transform: translate(63.5rem, 10.2rem);
+  transform: translate(63.5rem, 10.6rem);
 }
 
 #pulseWidthL1 {
-  transform: translate(61.3rem, 8.7rem);
+  transform: translate(61.3rem, 9.2rem);
 }
 
 #pulseWidthL2 {
-  transform: translate(64.2rem, 12.4rem);
+  transform: translate(64.2rem, 12.8rem);
 }
 
 #pulseWidthL3 {
-  transform: translate(66.4rem, 8.7rem);
+  transform: translate(66.4rem, 9.2rem);
 }
 
 #pulseWidthLineSplit {
   position: absolute;
-  transform: translate(65.55rem, 8.7rem);
+  transform: translate(65.55rem, 9.2rem);
   width: 0.1rem;
   height: 1rem;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
 }
 
 #sync12OnL {
-  transform: translate(60.8rem, 12.55rem);
+  transform: translate(60.8rem, 13.3rem);
 }
 
 #subOscBar {
@@ -310,8 +310,8 @@
   position: absolute;
   width: 0.3rem;
   height: 0.7rem;
-  border-left: 0.1rem solid white;
-  border-top: 0.1rem solid white;
+  border-left: 0.1rem solid rgb(240, 240, 240);
+  border-top: 0.1rem solid rgb(240, 240, 240);
   transform: translate(70.9rem, 15.3rem);
 }
 
@@ -320,9 +320,9 @@
   position: absolute;
   width: 0.4rem;
   height: 0.7rem;
-  border-left: 0.1rem solid white;
-  border-bottom: 0.1rem solid white;
-  border-right: 0.1rem solid white;
+  border-left: 0.1rem solid rgb(240, 240, 240);
+  border-bottom: 0.1rem solid rgb(240, 240, 240);
+  border-right: 0.1rem solid rgb(240, 240, 240);
   transform: translate(71.2rem, 15.3rem);
 }
 
@@ -331,8 +331,8 @@
   position: absolute;
   width: 0.4rem;
   height: 0.7rem;
-  border-left: 0.1rem solid white;
-  border-top: 0.1rem solid white;
+  border-left: 0.1rem solid rgb(240, 240, 240);
+  border-top: 0.1rem solid rgb(240, 240, 240);
   transform: translate(70.9rem, 16.95rem);
 }
 
@@ -341,8 +341,8 @@
   position: absolute;
   width: 0.3rem;
   height: 0.7rem;
-  border-left: 0.1rem solid white;
-  border-bottom: 0.1rem solid white;
-  border-right: 0.1rem solid white;
+  border-left: 0.1rem solid rgb(240, 240, 240);
+  border-bottom: 0.1rem solid rgb(240, 240, 240);
+  border-right: 0.1rem solid rgb(240, 240, 240);
   transform: translate(71.3rem, 16.95rem);
 }

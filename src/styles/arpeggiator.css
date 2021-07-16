@@ -2,7 +2,7 @@
   transform: translate(9rem, 20.9rem);
 }
 
-#tempoL {
+#tempoKL {
   transform: translateY(4rem);
 }
 
@@ -10,7 +10,7 @@
   transform: translate(16.8rem, 20.9rem);
 }
 
-#rhythmL {
+#rhythmKL {
   transform: translateY(4rem);
 }
 
@@ -132,12 +132,10 @@
 
 #arpUpDn1L {
   transform: translate(22.2rem, 20.2rem);
-  white-space: nowrap;
 }
 
 #arpUpDn2L {
   transform: translate(25.4rem, 19.4rem);
-  white-space: nowrap;
 }
 
 #arpPlayedL {

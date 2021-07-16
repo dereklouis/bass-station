@@ -81,28 +81,28 @@ const Filters = (props) => {
       <div id="overdriveK" className="knobDiv">
         <KnobBorder highNoon={false} />
         <Knob />
-        <p id="overdriveL" className="knobLabel">
+        <p id="overdriveKL" className="knobLabel">
           Overdrive
         </p>
       </div>
       <div id="resonanceK" className="knobDiv">
         <KnobBorder highNoon={false} />
         <Knob />
-        <p id="resonanceL" className="knobLabel">
+        <p id="resonanceKL" className="knobLabel">
           Resonance
         </p>
       </div>
       <div id="filtersMEDK" className="knobDiv">
         <KnobBorder highNoon={true} />
         <Knob />
-        <p id="filtersMEDL" className="knobLabel">
+        <p id="filtersMEDKL" className="knobLabel">
           Mod Env depth
         </p>
       </div>
       <div id="filtersLFO2K" className="knobDiv">
         <KnobBorder highNoon={true} />
         <Knob />
-        <p id="filtersLFO2L" className="knobLabel">
+        <p id="filtersLFO2KL" className="knobLabel">
           LFO 2 depth
         </p>
       </div>
@@ -113,7 +113,7 @@ const Filters = (props) => {
       <div id="frequencyK" className="knobDiv">
         <KnobBigBorder />
         <KnobBig />
-        <p id="filtersFrequencyL" className="knobLabel">
+        <p id="filtersFrequencyKL" className="knobLabel">
           Frequency
         </p>
       </div>

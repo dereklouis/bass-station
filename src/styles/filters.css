@@ -75,7 +75,7 @@
 #filtersBulbsArm1 {
   position: absolute;
   width: 0.1rem;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   height: 9.6rem;
   transform: translate(92.9rem, 5.8rem);
 }
@@ -83,7 +83,7 @@
 #filtersBulbsArm2 {
   position: absolute;
   width: 0.9rem;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   height: 0.1rem;
   transform: translate(92.9rem, 5.8rem);
 }
@@ -91,7 +91,7 @@
 #filtersBulbsArm3 {
   position: absolute;
   width: 1.7rem;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   height: 0.1rem;
   transform: translate(92.9rem, 11.8rem);
 }
@@ -99,7 +99,7 @@
 #filtersBulbsArm4 {
   position: absolute;
   width: 1.4rem;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   height: 0.1rem;
   transform: translate(92.9rem, 15.4rem);
 }
@@ -124,7 +124,7 @@
   transform: translate(101.8rem, 5.7rem);
 }
 
-#overdriveL {
+#overdriveKL {
   transform: translateY(3.2rem);
 }
 
@@ -132,7 +132,7 @@
   transform: translate(109.6rem, 5.7rem);
 }
 
-#resonanceL {
+#resonanceKL {
   transform: translateY(3.2rem);
 }
 
@@ -140,7 +140,7 @@
   transform: translate(101.8rem, 12.8rem);
 }
 
-#filtersMEDL {
+#filtersMEDKL {
   transform: translateY(3.2rem);
 }
 
@@ -148,7 +148,7 @@
   transform: translate(109.6rem, 12.8rem);
 }
 
-#filtersLFO2L {
+#filtersLFO2KL {
   transform: translateY(3.2rem);
 }
 
@@ -156,9 +156,9 @@
   position: absolute;
   height: 4.1rem;
   width: 0.5rem;
-  border-top: 0.1rem solid white;
-  border-left: 0.1rem solid white;
-  border-bottom: 0.1rem solid white;
+  border-top: 0.1rem solid rgb(240, 240, 240);
+  border-left: 0.1rem solid rgb(240, 240, 240);
+  border-bottom: 0.1rem solid rgb(240, 240, 240);
   transform: translate(100.9rem, 13rem);
 }
 
@@ -166,9 +166,9 @@
   position: absolute;
   height: 4.1rem;
   width: 0.5rem;
-  border-top: 0.1rem solid white;
-  border-right: 0.1rem solid white;
-  border-bottom: 0.1rem solid white;
+  border-top: 0.1rem solid rgb(240, 240, 240);
+  border-right: 0.1rem solid rgb(240, 240, 240);
+  border-bottom: 0.1rem solid rgb(240, 240, 240);
   transform: translate(114.5rem, 13rem);
 }
 
@@ -176,7 +176,7 @@
   position: absolute;
   height: 0.1rem;
   width: 1.9rem;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   transform: translate(107.1rem, 15.1rem);
 }
 
@@ -184,7 +184,7 @@
   position: absolute;
   height: 0.1rem;
   width: 5.4rem;
-  background-color: white;
+  background-color: rgb(240, 240, 240);
   transform: translate(115.5rem, 15.1rem);
 }
 
@@ -193,6 +193,6 @@
   transform: translate(119.1rem, 5.65rem);
 }
 
-#filtersFrequencyL {
+#filtersFrequencyKL {
   transform: translateY(5rem);
 }

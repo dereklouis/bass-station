@@ -6,7 +6,7 @@ import Bulb from './bulb';
 import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
-const OscillatorsPanel = (props) => {
+const Oscillators = (props) => {
   const [rangeSelection, setRangeSelection] = useState(2);
   const [waveformSelection, setwaveformSelection] = useState(3);
   const [subOscOctave, setSubOscOctave] = useState(1);
@@ -214,4 +214,4 @@ const OscillatorsPanel = (props) => {
   );
 };
 
-export default OscillatorsPanel;
+export default Oscillators;
