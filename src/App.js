@@ -11,6 +11,8 @@ import Filters from './filters';
 import Arpeggiator from './arpeggiator';
 import Porta from './porta';
 import Lfos from './lfos';
+import Envelopes from './envelopes';
+import Effects from './effects';
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
         <Arpeggiator />
         <Porta />
         <Lfos />
+        <Envelopes />
+        <Effects />
         <div id="midBar">
           <p id="arpeggiatorL" className="boldLabel">
             ARPEGGIATOR
