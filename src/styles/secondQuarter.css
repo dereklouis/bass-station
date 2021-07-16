@@ -62,3 +62,12 @@
 #midLBB4 {
   transform: translate(107.7rem, 0rem);
 }
+
+.whiteBoxL {
+  position: absolute;
+  font-size: 0.8rem;
+  margin: 0;
+  background-color: rgb(240, 240, 240);
+  color: rgb(20, 20, 20);
+  border-radius: 0.1rem;
+}

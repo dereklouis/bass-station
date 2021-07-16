@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './styles/oscillatorsPanel.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
@@ -6,16 +7,11 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const OscillatorsPanel = (props) => {
-  const {
-    rangeSelection,
-    setRangeSelection,
-    waveformSelection,
-    setwaveformSelection,
-    subOscOctave,
-    setSubOscOctave,
-    subOscWave,
-    setSubOscWave,
-  } = props;
+  const [rangeSelection, setRangeSelection] = useState(2);
+  const [waveformSelection, setwaveformSelection] = useState(3);
+  const [subOscOctave, setSubOscOctave] = useState(1);
+  const [subOscWave, setSubOscWave] = useState(3);
+
   return (
     <div className="absolute">
       <div id="coarseK" className="knobDiv">

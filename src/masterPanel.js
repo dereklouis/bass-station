@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import './styles/masterPanel.css';
 
 const MasterPanel = (props) => {
-  const { patchNumber, setPatchNumber } = props;
+  const [patchNumber, setPatchNumber] = useState(0);
   return (
     <div className="absolute">
       <div id="screen">

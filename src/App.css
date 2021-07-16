@@ -14,6 +14,14 @@
 /* width: 26.75cm */
 /* Sclae: x3 */
 
+#BSMaster {
+  width: 136.5rem;
+  height: 80.25rem;
+  background-color: rgb(20, 20, 20);
+  border-radius: 0.5rem;
+  position: relative;
+}
+
 .boldLabel {
   font-weight: 800;
   margin: 0px;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './styles/filters.css';
 import Knob from './knob';
 import KnobBig from './knobBig';
@@ -8,14 +9,9 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Filters = (props) => {
-  const {
-    filtersType,
-    setFiltersType,
-    filtersSlope,
-    setFiltersSlope,
-    filtersShape,
-    setFiltersShape,
-  } = props;
+  const [filtersType, setFiltersType] = useState(1);
+  const [filtersSlope, setFiltersSlope] = useState(2);
+  const [filtersShape, setFiltersShape] = useState(1);
   return (
     <div className="absolute">
       <div id="filtersTypeS">

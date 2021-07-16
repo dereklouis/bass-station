@@ -8,17 +8,9 @@ import MasterPanel from './masterPanel';
 import OscillatorsPanel from './oscillatorsPanel';
 import Mixer from './mixer';
 import Filters from './filters';
+import Arpeggiator from './arpeggiator';
 
 function App() {
-  const [patchNumber, setPatchNumber] = useState(0);
-  const [rangeSelection, setRangeSelection] = useState(2);
-  const [waveformSelection, setwaveformSelection] = useState(3);
-  const [subOscOctave, setSubOscOctave] = useState(1);
-  const [subOscWave, setSubOscWave] = useState(3);
-  const [filtersType, setFiltersType] = useState(1);
-  const [filtersSlope, setFiltersSlope] = useState(2);
-  const [filtersShape, setFiltersShape] = useState(1);
-
   return (
     <div id="appContainer">
       <div id="BSMaster">
@@ -42,30 +34,12 @@ function App() {
             FILTERS
           </p>
         </div>
-        <div id="middleBar" />
-        <MasterPanel
-          patchNumber={patchNumber}
-          setPatchNumber={setPatchNumber}
-        />
-        <OscillatorsPanel
-          rangeSelection={rangeSelection}
-          setRangeSelection={setRangeSelection}
-          waveformSelection={waveformSelection}
-          setwaveformSelection={setwaveformSelection}
-          setSubOscOctave={setSubOscOctave}
-          subOscOctave={subOscOctave}
-          setSubOscWave={setSubOscWave}
-          subOscWave={subOscWave}
-        />
+        <div id="mainBarBottom" />
+        <MasterPanel />
+        <OscillatorsPanel />
         <Mixer />
-        <Filters
-          filtersType={filtersType}
-          setFiltersType={setFiltersType}
-          filtersSlope={filtersSlope}
-          setFiltersSlope={setFiltersSlope}
-          filtersShape={filtersShape}
-          setFiltersShape={setFiltersShape}
-        />
+        <Filters />
+        <Arpeggiator />
         <div id="midBar">
           <p id="arpeggiatorL" className="boldLabel">
             ARPEGGIATOR
