@@ -21,6 +21,7 @@ function App() {
   return (
     <div id="appContainer">
       <div id="BSMaster">
+        <div id="masterShadowLeft" />
         <div id="masterBar">
           <p id="masterL" className="boldLabel">
             MASTER
@@ -79,6 +80,7 @@ function App() {
         <KeysTopper />
         <OPM />
         <Keyboard />
+        <div id="masterShadowRight" />
         {/* <div className="testH" />
         <div className="testV" /> */}
       </div>

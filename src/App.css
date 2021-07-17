@@ -17,7 +17,13 @@
 #BSMaster {
   width: 136.5rem;
   height: 80.25rem;
-  background-color: rgb(20, 20, 20);
+  /* background-color: rgb(20, 20, 20); */
+  background: linear-gradient(
+    90deg,
+    rgb(20, 20, 20),
+    rgb(30, 30, 30),
+    rgb(20, 20, 20)
+  );
   border-radius: 0.5rem;
   position: relative;
 }
@@ -108,4 +114,21 @@
   align-items: center;
   justify-content: center;
   position: absolute;
+}
+
+#masterShadowLeft {
+  position: absolute;
+  height: 80.25rem;
+  background: linear-gradient(90deg, black, rgb(45, 45, 45), rgb(20, 20, 20));
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  width: 4.5rem;
+}
+
+#masterShadowRight {
+  position: absolute;
+  height: 80.25rem;
+  right: 0;
+  background: linear-gradient(90deg, rgb(20, 20, 20), rgb(45, 45, 45), black);
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  width: 4.5rem;
 }

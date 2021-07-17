@@ -1,6 +1,9 @@
 import './styles/oPM.css';
 import Wheel from './wheel';
 
+// Lowest Position = 9.5rem
+// Highest Position = 0rem
+
 const OPM = () => {
   return (
     <div className="absolute">
@@ -19,10 +22,10 @@ const OPM = () => {
         Reset
       </p>
       <div id="pitchWheel">
-        <Wheel position={4.5} />
+        <Wheel position={4.75} />
       </div>
       <div id="modWheel">
-        <Wheel position={9} />
+        <Wheel position={9.5} />
       </div>
       <p id="oPMPitchL" className="subLabelLarge">
         Pitch
