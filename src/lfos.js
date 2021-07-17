@@ -8,6 +8,8 @@ import SwitchAB from './switchAB';
 const Lfos = () => {
   const [lfo1Wave, setLfo1Wave] = useState(1);
   const [lfo2Wave, setLfo2Wave] = useState(1);
+  const [speedS, setSpeedS] = useState('B');
+
   return (
     <div className="absolute">
       <div
@@ -52,7 +54,11 @@ const Lfos = () => {
         <Knob />
       </div>
       <div id="speedDelayS">
-        <SwitchAB position={'B'} />
+        <SwitchAB
+          position={speedS}
+          setPosition={setSpeedS}
+          orientation={'Vertical'}
+        />
       </div>
       <div id="lfosLFO2K" className="knobDiv">
         <KnobBorder highNoon={false} />

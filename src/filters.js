@@ -9,43 +9,51 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Filters = (props) => {
-  const [filtersType, setFiltersType] = useState(1);
-  const [filtersSlope, setFiltersSlope] = useState(2);
+  const [filtersTypeS, setFiltersTypeS] = useState('A');
+  const [filtersSlopS, setFiltersSlopS] = useState('B');
   const [filtersShape, setFiltersShape] = useState(1);
   return (
     <div className="absolute">
       <div id="filtersTypeS">
-        <SwitchAB position={'A'} />
+        <SwitchAB
+          orientation={'Horizontal'}
+          position={filtersTypeS}
+          setPosition={setFiltersTypeS}
+        />
       </div>
       <p id="filtersTypeL" className="subLabelLarge">
         Type
       </p>
       <div id="filtersType1Bulb">
-        <Bulb on={filtersType === 1} />
+        <Bulb on={filtersTypeS === 'A'} />
       </div>
       <p id="filtersClassicL" className="subLabelXSmall">
         Classic
       </p>
       <div id="filtersType2Bulb">
-        <Bulb on={filtersType === 2} />
+        <Bulb on={filtersTypeS === 'B'} />
       </div>
       <p id="filtersAcidL" className="subLabelXSmall">
         Acid
       </p>
       <div id="filtersSlopeS">
-        <SwitchAB position={'B'} />
+        <SwitchAB
+          orientation={'Horizontal'}
+          position={filtersSlopS}
+          setPosition={setFiltersSlopS}
+        />
       </div>
       <p id="filtersSlopeL" className="subLabelLarge">
         Slope
       </p>
       <div id="filtersSlope1Bulb">
-        <Bulb on={filtersSlope === 1} />
+        <Bulb on={filtersSlopS === 'A'} />
       </div>
       <p id="filters12DBL" className="subLabelXSmall">
         12dB
       </p>
       <div id="filtersSlope2Bulb">
-        <Bulb on={filtersSlope === 2} />
+        <Bulb on={filtersSlopS === 'B'} />
       </div>
       <p id="filters24DBL" className="subLabelXSmall">
         24dB
