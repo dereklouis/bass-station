@@ -1,0 +1,126 @@
+#transposeB {
+  transform: translate(7.1rem, 34.7rem);
+  width: 5rem;
+  height: 1.7rem;
+}
+
+#transposeL {
+  margin: 0;
+  cursor: pointer;
+}
+
+#functionB {
+  transform: translate(13.8rem, 34.7rem);
+  width: 5rem;
+  height: 1.7rem;
+}
+
+#functionL {
+  margin: 0;
+  cursor: pointer;
+}
+
+#keysTopperExitL {
+  transform: translate(15.8rem, 37rem);
+}
+
+#keysTopperMainBracket {
+  position: absolute;
+  width: 105.5rem;
+  height: 1.25rem;
+  border-top: 0.3rem solid #3aadec;
+  border-right: 0.3rem solid #3aadec;
+  transform: translate(23.5rem, 34.65rem);
+}
+
+#fMWConnect {
+  background-color: #3aadec;
+  width: 4rem;
+  height: 0.3rem;
+  position: absolute;
+  transform: translate(19.5rem, 35.95rem);
+}
+
+#kTMWL {
+  background-color: #3aadec;
+  padding: 0rem 0.6rem 0rem 0.3rem;
+  transform: translate(23.5rem, 34.95rem);
+}
+
+.keysTopperBlocker {
+  position: absolute;
+  background-color: #3aadec;
+  width: 0.3rem;
+  height: 1.6rem;
+  border-right: 0.3rem solid rgb(20, 20, 20);
+}
+
+#kTB1 {
+  transform: translate(39.5rem, 34.65rem);
+}
+
+#kTAL {
+  background-color: #3aadec;
+  padding: 0rem 0.6rem 0rem 0.4rem;
+  transform: translate(40.1rem, 34.95rem);
+}
+
+#kTB2 {
+  transform: translate(52.6rem, 34.65rem);
+}
+
+#kTLFOL {
+  background-color: #3aadec;
+  padding: 0rem 2.6rem 0rem 0.6rem;
+  transform: translate(53.2rem, 34.95rem);
+}
+
+#kTB3 {
+  transform: translate(76.7rem, 34.65rem);
+}
+
+#kTOSCL {
+  background-color: #3aadec;
+  padding: 0rem 1.1rem 0rem 0.6rem;
+  transform: translate(77.3rem, 34.95rem);
+}
+
+#kTB4 {
+  transform: translate(86rem, 34.65rem);
+}
+
+#kTVELL {
+  background-color: #3aadec;
+  padding: 0rem 1.2rem 0rem 0.5rem;
+  transform: translate(86.6rem, 34.95rem);
+}
+
+#kTB5 {
+  transform: translate(94rem, 34.65rem);
+}
+
+#kTVCAL {
+  background-color: #3aadec;
+  padding: 0rem 1.2rem 0rem 0.5rem;
+  transform: translate(94.6rem, 34.95rem);
+}
+
+#kTB6 {
+  transform: translate(98.2rem, 34.65rem);
+}
+
+#kTARPL {
+  background-color: #3aadec;
+  padding: 0rem 2.2rem 0rem 0.5rem;
+  transform: translate(98.8rem, 34.95rem);
+}
+
+#kTB7 {
+  transform: translate(106.2rem, 34.65rem);
+}
+
+#kTGlobalL {
+  background-color: #3aadec;
+  padding: 0rem 2.2rem 0rem 0.5rem;
+  transform: translate(106.8rem, 34.95rem);
+}
