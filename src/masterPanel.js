@@ -29,7 +29,7 @@ const MasterPanel = (props) => {
         <div id="amountBackArrow" />
         <div id="amountForwardArrow" />
         <div id="amountBackArrowLight" className="amountArrowLightOff" />
-        <div id="amountForwardArrowLight" className="amountArrowLightOn" />
+        <div id="amountForwardArrowLight" className="amountArrowLightOff" />
       </div>
       <div id="volumeK" className="knobDiv">
         <KnobBorder highNoon={false} />

@@ -47,29 +47,29 @@
 
 #filtersShape1Bulb {
   position: absolute;
-  transform: translate(94.9rem, 16.8rem);
+  transform: translate(94.8rem, 16.8rem);
 }
 
 #filtersShape2Bulb {
   position: absolute;
-  transform: translate(96.6rem, 16.8rem);
+  transform: translate(96.5rem, 16.8rem);
 }
 
 #filtersShape3Bulb {
   position: absolute;
-  transform: translate(98.3rem, 16.8rem);
+  transform: translate(98.2rem, 16.8rem);
 }
 
 #filtersLPL {
-  transform: translate(94.9rem, 17.8rem);
+  transform: translate(94.8rem, 17.8rem);
 }
 
 #filtersBPL {
-  transform: translate(96.55rem, 17.8rem);
+  transform: translate(96.45rem, 17.8rem);
 }
 
 #filtersHPL {
-  transform: translate(98.2rem, 17.8rem);
+  transform: translate(98.1rem, 17.8rem);
 }
 
 #filtersBulbsArm1 {
