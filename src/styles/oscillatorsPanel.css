@@ -25,9 +25,9 @@
 
 #picthBox {
   width: 6.8rem;
-  height: 0.8rem;
+  height: 0.75rem;
   position: absolute;
-  transform: translate(51.4rem, 13.2rem);
+  transform: translate(51.4rem, 13.15rem);
   border-bottom: 0.15rem solid white;
   border-left: 0.15rem solid white;
   border-right: 0.15rem solid white;

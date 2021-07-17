@@ -13,6 +13,7 @@ import Porta from './porta';
 import Lfos from './lfos';
 import Envelopes from './envelopes';
 import Effects from './effects';
+import Keyboard from './keyboard';
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
             EFFECTS
           </p>
         </div>
+        <Keyboard />
         {/* <div className="testH" />
         <div className="testV" /> */}
       </div>
