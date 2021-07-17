@@ -13,6 +13,8 @@ import Porta from './porta';
 import Lfos from './lfos';
 import Envelopes from './envelopes';
 import Effects from './effects';
+import KeysTopper from './keysTopper';
+import OPM from './oPM';
 import Keyboard from './keyboard';
 
 function App() {
@@ -74,6 +76,8 @@ function App() {
             EFFECTS
           </p>
         </div>
+        <KeysTopper />
+        <OPM />
         <Keyboard />
         {/* <div className="testH" />
         <div className="testV" /> */}

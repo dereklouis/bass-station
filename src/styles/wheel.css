@@ -1,0 +1,50 @@
+.wheelMaster {
+  position: absolute;
+  width: 4.5rem;
+  height: 18.6rem;
+  background: linear-gradient(180deg, black, #0504ff, black);
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wheel {
+  width: 3.5rem;
+  height: 17.6rem;
+  border-radius: 0.2rem;
+  background-color: rgb(30, 30, 30);
+}
+
+.wheelNotch {
+  position: absolute;
+  width: 3.5rem;
+  height: 8rem;
+  background: linear-gradient(
+    180deg,
+    rgb(30, 30, 30),
+    rgb(45, 45, 45),
+    rgb(30, 30, 30),
+    rgb(29, 29, 29),
+    rgb(45, 45, 45),
+    rgb(30, 30, 30)
+  );
+}
+
+.wheelShadow {
+  position: absolute;
+  width: 3.5rem;
+  height: 17.6rem;
+  background: linear-gradient(
+    180deg,
+    black,
+    rgb(30, 30, 30),
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    rgb(30, 30, 30),
+    black
+  );
+}

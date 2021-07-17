@@ -93,54 +93,54 @@
 
 #fineSineBulb {
   position: absolute;
-  transform: translate(42.05rem, 12.6rem);
+  transform: translate(42.05rem, 14.6rem);
 }
 
 #fineTriBulb {
   position: absolute;
-  transform: translate(43.35rem, 12.6rem);
+  transform: translate(43.35rem, 14.6rem);
 }
 
 #fineSawBulb {
   position: absolute;
-  transform: translate(44.65rem, 12.6rem);
+  transform: translate(44.65rem, 14.6rem);
 }
 
 #fineSquareBulb {
   position: absolute;
-  transform: translate(45.95rem, 12.6rem);
+  transform: translate(45.95rem, 14.6rem);
 }
 
 #waveformB {
   width: 5.1rem;
   height: 1.5rem;
-  transform: translate(41.8rem, 14.8rem);
+  transform: translate(41.8rem, 16.75rem);
 }
 
 #waveformL {
-  transform: translate(42.45rem, 13.65rem);
+  transform: translate(42.45rem, 15.6rem);
 }
 
 #fineSineL {
-  transform: translate(42.2rem, 11.4rem) rotate(-90deg) scale(-1.2, 1.7)
+  transform: translate(42.2rem, 13.35rem) rotate(-90deg) scale(-1.2, 1.7)
     skewY(-20deg);
 }
 
 #fineTriL {
-  transform: translate(43.45rem, 11.4rem) rotate(180deg) scaleX(1.3);
+  transform: translate(43.45rem, 13.35rem) rotate(180deg) scaleX(1.3);
 }
 
 #fineSawL1 {
-  transform: translate(44.7rem, 11.4rem) scaleX(1.3);
+  transform: translate(44.7rem, 13.35rem) scaleX(1.3);
 }
 
 #fineSawL2 {
-  transform: translate(45rem, 11.4rem) scale(1.3, 1.2) rotate(-36deg);
+  transform: translate(45rem, 13.35rem) scale(1.3, 1.2) rotate(-36deg);
 }
 
 #fineSquareL1 {
   position: absolute;
-  transform: translate(45.9rem, 11.55rem);
+  transform: translate(45.9rem, 13.5rem);
   width: 0.7rem;
   height: 0.55rem;
   border-top: 0.15rem solid rgb(240, 240, 240);
@@ -150,7 +150,7 @@
 
 #fineSquareL2 {
   position: absolute;
-  transform: translate(46.8rem, 11.55rem);
+  transform: translate(46.8rem, 13.5rem);
   width: 0.3rem;
   height: 0.55rem;
   border-bottom: 0.15rem solid rgb(240, 240, 240);
@@ -159,7 +159,7 @@
 
 #fineSquareL3 {
   position: absolute;
-  transform: translate(46.5rem, 11.55rem);
+  transform: translate(46.5rem, 13.5rem);
   width: 0.3rem;
   height: 0.55rem;
   border-bottom: 0.15rem dotted rgb(240, 240, 240);
@@ -168,55 +168,55 @@
 
 #oscSelectS {
   position: absolute;
-  transform: translate(53.3rem, 13rem);
+  transform: translate(53.3rem, 16.8rem);
 }
 
 #oscSelectL1 {
-  transform: translate(52.1rem, 13.3rem);
+  transform: translate(52.1rem, 17.1rem);
 }
 
 #oscSelectL2 {
-  transform: translate(57.35rem, 13.3rem);
+  transform: translate(57.35rem, 17.1rem);
 }
 
 #oscSelectL3 {
-  transform: translate(52.75rem, 11.8rem);
+  transform: translate(52.9rem, 15.2rem);
 }
 
 #sync12L {
-  transform: translate(58.1rem, 11.8rem);
+  transform: translate(58.1rem, 15.2rem);
 }
 
 #sync12Bulb {
-  transform: translate(59.6rem, 13.3rem);
+  transform: translate(59.6rem, 17.2rem);
+}
+
+#sync12OnL {
+  transform: translate(60.8rem, 17.2rem);
 }
 
 #pulseWidthS {
-  transform: translate(63.5rem, 10.6rem);
+  transform: translate(63.5rem, 14.5rem);
 }
 
 #pulseWidthL1 {
-  transform: translate(61.3rem, 9.2rem);
+  transform: translate(61.3rem, 13rem);
 }
 
 #pulseWidthL2 {
-  transform: translate(64.2rem, 12.8rem);
+  transform: translate(64.2rem, 16.7rem);
 }
 
 #pulseWidthL3 {
-  transform: translate(66.4rem, 9.2rem);
+  transform: translate(66.4rem, 13rem);
 }
 
 #pulseWidthLineSplit {
   position: absolute;
-  transform: translate(65.55rem, 9.2rem);
+  transform: translate(65.55rem, 13rem);
   width: 0.1rem;
   height: 1rem;
   background-color: rgb(240, 240, 240);
-}
-
-#sync12OnL {
-  transform: translate(60.8rem, 13.3rem);
 }
 
 #subOscBar {
