@@ -9,9 +9,10 @@ import SwitchABC from './switchABC';
 const Oscillators = (props) => {
   const [rangeSelection, setRangeSelection] = useState(2);
   const [waveformSelection, setwaveformSelection] = useState(3);
-  const [subOscWave, setSubOscWave] = useState(3);
+  const [subOscWaveS, setSubOscWaveS] = useState('C');
   const [oscSelectS, setOscSelectS] = useState('A');
   const [octaveSelectS, setOctaveSelectS] = useState('A');
+  const [mMLS, setMMLS] = useState('B');
 
   return (
     <div className="absolute">
@@ -167,7 +168,11 @@ const Oscillators = (props) => {
         LFO 2
       </p>
       <div id="pulseWidthS">
-        <SwitchABC />
+        <SwitchABC
+          orientation="Horizontal"
+          position={mMLS}
+          setPosition={setMMLS}
+        />
       </div>
       <p id="sync12OnL" className="subLabelLarge">
         On
@@ -185,7 +190,11 @@ const Oscillators = (props) => {
         />
       </div>
       <div id="subOscWaveS">
-        <SwitchABC position={'C'} />
+        <SwitchABC
+          orientation={'Vertical'}
+          position={subOscWaveS}
+          setPosition={setSubOscWaveS}
+        />
       </div>
       <p id="subOscOctaveL" className="subLabelLarge">
         Octave
@@ -197,13 +206,13 @@ const Oscillators = (props) => {
         <Bulb on={octaveSelectS === 'B'} />
       </div>
       <div id="subOscWave1B">
-        <Bulb on={subOscWave === 1} />
+        <Bulb on={subOscWaveS === 'A'} />
       </div>
       <div id="subOscWave2B">
-        <Bulb on={subOscWave === 2} />
+        <Bulb on={subOscWaveS === 'B'} />
       </div>
       <div id="subOscWave3B">
-        <Bulb on={subOscWave === 3} />
+        <Bulb on={subOscWaveS === 'C'} />
       </div>
       <p id="subOscOctave1L" className="subLabelSmall">
         - 1

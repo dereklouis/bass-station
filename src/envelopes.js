@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './styles/envelopes.css';
 import SwitchABC from './switchABC';
 import Fader from './fader';
@@ -5,10 +6,16 @@ import Bulb from './bulb';
 import SwitchAB from './switchAB';
 
 const Envelopes = () => {
+  const [eSS, setESS] = useState('B');
+  const [triggeringS, setTriggeringS] = useState('A');
   return (
     <div className="absolute">
       <div id="envSelectS">
-        <SwitchABC position={'B'} />
+        <SwitchABC
+          orientation={'Vertical'}
+          position={eSS}
+          setPosition={setESS}
+        />
       </div>
       <p id="envSelectL" className="subLabelLarge">
         Env Select
@@ -48,19 +55,23 @@ const Envelopes = () => {
         Release
       </p>
       <div id="triggeringS">
-        <SwitchABC position={'A'} />
+        <SwitchABC
+          orientation={'Vertical'}
+          position={triggeringS}
+          setPosition={setTriggeringS}
+        />
       </div>
       <p id="triggeringL" className="subLabelLarge">
         Triggering
       </p>
       <div id="triggeringBulb1">
-        <Bulb on={true} />
+        <Bulb on={triggeringS === 'A'} />
       </div>
       <div id="triggeringBulb2">
-        <Bulb />
+        <Bulb on={triggeringS === 'B'} />
       </div>
       <div id="triggeringBulb3">
-        <Bulb />
+        <Bulb on={triggeringS === 'C'} />
       </div>
       <p id="triggeringBulbL1" className="subLabelLarge">
         Autoglide

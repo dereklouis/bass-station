@@ -200,7 +200,7 @@
 }
 
 #pulseWidthL1 {
-  transform: translate(61.3rem, 13rem);
+  transform: translate(61.2rem, 13rem);
 }
 
 #pulseWidthL2 {
@@ -208,12 +208,12 @@
 }
 
 #pulseWidthL3 {
-  transform: translate(66.4rem, 13rem);
+  transform: translate(66.3rem, 13rem);
 }
 
 #pulseWidthLineSplit {
   position: absolute;
-  transform: translate(65.55rem, 13rem);
+  transform: translate(65.45rem, 13rem);
   width: 0.1rem;
   height: 1rem;
   background-color: rgb(240, 240, 240);

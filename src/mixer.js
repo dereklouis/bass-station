@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import './styles/mixer.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import SwitchABC from './switchABC';
 
 const Mixer = () => {
+  const [eRNS, setERNS] = useState('A');
   return (
     <div className="absolute">
       <div id="mixerOsc1K" className="knobDiv">
@@ -42,7 +44,11 @@ const Mixer = () => {
         Noise
       </p>
       <div id="mixerUtilityS">
-        <SwitchABC position={'A'} />
+        <SwitchABC
+          orientation={'Vertical'}
+          position={eRNS}
+          setPosition={setERNS}
+        />
       </div>
     </div>
   );

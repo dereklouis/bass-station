@@ -11,7 +11,7 @@ import SwitchABC from './switchABC';
 const Filters = (props) => {
   const [filtersTypeS, setFiltersTypeS] = useState('A');
   const [filtersSlopS, setFiltersSlopS] = useState('B');
-  const [filtersShape, setFiltersShape] = useState(1);
+  const [filtersShapeS, setFiltersShapeS] = useState('A');
   return (
     <div className="absolute">
       <div id="filtersTypeS">
@@ -59,19 +59,23 @@ const Filters = (props) => {
         24dB
       </p>
       <div id="filtersShapeS">
-        <SwitchABC position={'A'} />
+        <SwitchABC
+          orientation={'Horizontal'}
+          position={filtersShapeS}
+          setPosition={setFiltersShapeS}
+        />
       </div>
       <p id="filtersShapeL" className="subLabelLarge">
         Shape
       </p>
       <div id="filtersShape1Bulb">
-        <Bulb on={filtersShape === 1} />
+        <Bulb on={filtersShapeS === 'A'} />
       </div>
       <div id="filtersShape2Bulb">
-        <Bulb on={filtersShape === 2} />
+        <Bulb on={filtersShapeS === 'B'} />
       </div>
       <div id="filtersShape3Bulb">
-        <Bulb on={filtersShape === 3} />
+        <Bulb on={filtersShapeS === 'C'} />
       </div>
       <p id="filtersLPL" className="subLabelLarge">
         LP
