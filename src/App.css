@@ -114,6 +114,11 @@
   align-items: center;
   justify-content: center;
   position: absolute;
+  cursor: grab;
+}
+
+.knobDiv:active {
+  cursor: grabbing;
 }
 
 #masterShadowLeft {

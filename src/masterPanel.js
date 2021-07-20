@@ -5,6 +5,7 @@ import './styles/masterPanel.css';
 
 const MasterPanel = (props) => {
   const [patchNumber, setPatchNumber] = useState(0);
+  const [volumeKnob, setVolumeKnob] = useState(0);
   return (
     <div className="absolute">
       <div id="screen">
@@ -33,7 +34,7 @@ const MasterPanel = (props) => {
       </div>
       <div id="volumeK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={volumeKnob} setRotation={setVolumeKnob} />
         <p id="volumeKL" className="knobLabel">
           Volume
         </p>
@@ -47,7 +48,7 @@ const MasterPanel = (props) => {
         Patch
       </p>
       <div id="saveB" className="button">
-        <p id="saveBL" className="buttonLabel">
+        <p id="saveBL" className="buttonLabel" style={{ cursor: 'pointer' }}>
           Save
         </p>
       </div>

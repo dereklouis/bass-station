@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 import './styles/firstQuarter.css';
 import './styles/secondQuarter.css';
@@ -10,7 +10,7 @@ import Mixer from './mixer';
 import Filters from './filters';
 import Arpeggiator from './arpeggiator';
 import Porta from './porta';
-import Lfos from './lfos';
+import Lfos from './lFOS';
 import Envelopes from './envelopes';
 import Effects from './effects';
 import KeysTopper from './keysTopper';

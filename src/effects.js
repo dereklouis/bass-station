@@ -1,20 +1,23 @@
+import { useState } from 'react';
 import './styles/effects.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 
 const Effects = () => {
+  const [distortionKnob, setDistortionKnob] = useState(0);
+  const [oFMKnob, setOFMKnob] = useState(0);
   return (
     <div className="absolute">
       <div id="distortionK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={distortionKnob} setRotation={setDistortionKnob} />
         <p id="distortionKL" className="knobLabel">
           Distortion
         </p>
       </div>
       <div id="oFMK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={oFMKnob} setRotation={setOFMKnob} />
         <p id="oFMKL" className="knobLabel">
           Osc Filter Mod
         </p>

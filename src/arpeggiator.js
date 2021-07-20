@@ -5,13 +5,17 @@ import KnobBorder from './knobBorder';
 import Bulb from './bulb';
 
 const Arpeggiator = () => {
+  const [tempoKnob, setTempoKnob] = useState(0);
+  const [rhythmKnob, setRhythmKnob] = useState(0);
+  const [directionKnob, setDirectionKnob] = useState(0);
+  const [aOSKnob, setAOSKnob] = useState(0);
   const [legatoStatus, setLegatoStatus] = useState(false);
   const [latchStatus, setLatchStatus] = useState(false);
   return (
     <div className="absolute">
       <div id="tempoK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={tempoKnob} setRotation={setTempoKnob} />
         <p id="tempoKL" className="knobLabel">
           Tempo
         </p>
@@ -57,7 +61,7 @@ const Arpeggiator = () => {
       </div>
       <div id="rhythmK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={rhythmKnob} setRotation={setRhythmKnob} />
         <p id="rhythmKL" className="knobLabel">
           Rhythm
         </p>
@@ -70,7 +74,7 @@ const Arpeggiator = () => {
       </p>
       <div id="rhythm2K" className="knobDiv">
         <KnobBorder highNoon={false} remove={[5, 6, 7, 8]} />
-        <Knob />
+        <Knob rotation={directionKnob} setRotation={setDirectionKnob} />
       </div>
       <p id="arpUpL" className="subLabelLarge">
         Up
@@ -98,7 +102,7 @@ const Arpeggiator = () => {
       </p>
       <div id="arpOctavesK" className="knobDiv">
         <KnobBorder highNoon={false} remove={[1, 2, 3, 4, 5, 6, 7, 8]} />
-        <Knob />
+        <Knob rotation={aOSKnob} setRotation={setAOSKnob} />
       </div>
       <p id="AO1L" className="subLabelLarge">
         1

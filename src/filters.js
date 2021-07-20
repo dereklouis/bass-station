@@ -12,6 +12,10 @@ const Filters = (props) => {
   const [filtersTypeS, setFiltersTypeS] = useState('A');
   const [filtersSlopS, setFiltersSlopS] = useState('B');
   const [filtersShapeS, setFiltersShapeS] = useState('A');
+  const [overdriveKnob, setOverdriveKnob] = useState(0);
+  const [resonanceKnob, setResonanceKnob] = useState(0);
+  const [filterMEDKnob, setFilterMEDKnob] = useState(0);
+  const [filterLFOKnob, setFilterLFOKnob] = useState(0);
   return (
     <div className="absolute">
       <div id="filtersTypeS">
@@ -92,28 +96,28 @@ const Filters = (props) => {
       <div id="filtersBulbsArm4" />
       <div id="overdriveK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={overdriveKnob} setRotation={setOverdriveKnob} />
         <p id="overdriveKL" className="knobLabel">
           Overdrive
         </p>
       </div>
       <div id="resonanceK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={resonanceKnob} setRotation={setResonanceKnob} />
         <p id="resonanceKL" className="knobLabel">
           Resonance
         </p>
       </div>
       <div id="filtersMEDK" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob />
+        <Knob rotation={filterMEDKnob} setRotation={setFilterMEDKnob} />
         <p id="filtersMEDKL" className="knobLabel">
           Mod Env depth
         </p>
       </div>
       <div id="filtersLFO2K" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob />
+        <Knob rotation={filterLFOKnob} setRotation={setFilterLFOKnob} />
         <p id="filtersLFO2KL" className="knobLabel">
           LFO 2 depth
         </p>

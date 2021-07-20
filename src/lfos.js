@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import './styles/lfos.css';
+import './styles/lFOS.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import Bulb from './bulb';
 import SwitchAB from './switchAB';
 
-const Lfos = () => {
+const LFOS = () => {
   const [lfo1Wave, setLfo1Wave] = useState(1);
-  const [lfo2Wave, setLfo2Wave] = useState(1);
+  const [lFO1Knob, setLFO1Knob] = useState(0);
   const [speedS, setSpeedS] = useState('B');
+  const [lFO2Knob, setLFO2Knob] = useState(0);
+  const [lfo2Wave, setLfo2Wave] = useState(1);
 
   return (
     <div className="absolute">
@@ -51,7 +53,7 @@ const Lfos = () => {
       </p>
       <div id="lfosLFO1K" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={lFO1Knob} setRotation={setLFO1Knob} />
       </div>
       <div id="speedDelayS">
         <SwitchAB
@@ -62,7 +64,7 @@ const Lfos = () => {
       </div>
       <div id="lfosLFO2K" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={lFO2Knob} setRotation={setLFO2Knob} />
       </div>
       <p id="lfosRightTriL" className="subLabelSmall">
         V
@@ -119,4 +121,4 @@ const Lfos = () => {
   );
 };
 
-export default Lfos;
+export default LFOS;

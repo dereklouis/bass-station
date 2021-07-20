@@ -5,33 +5,37 @@ import KnobBorder from './knobBorder';
 import SwitchABC from './switchABC';
 
 const Mixer = () => {
+  const [oSC1Knob, setOSC1Knob] = useState(0);
+  const [oSC2Knob, setOSC2Knob] = useState(0);
   const [eRNS, setERNS] = useState('A');
+  const [subOscKnob, setSubOscKnob] = useState(0);
+  const [eRNKnob, setERNKnob] = useState(0);
   return (
     <div className="absolute">
       <div id="mixerOsc1K" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={oSC1Knob} setRotation={setOSC1Knob} />
         <p id="mixerOsc1KL" className="knobLabel">
           Osc 1
         </p>
       </div>
       <div id="mixerOsc2K" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={oSC2Knob} setRotation={setOSC2Knob} />
         <p id="mixerOsc2KL" className="knobLabel">
           Osc 2
         </p>
       </div>
       <div id="mixerSubK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={subOscKnob} setRotation={setSubOscKnob} />
         <p id="mixerSubKL" className="knobLabel">
           Sub Osc
         </p>
       </div>
       <div id="mixerUtilityK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob />
+        <Knob rotation={eRNKnob} setRotation={setERNKnob} />
       </div>
       <div id="mixerUtilityBox" />
       <p id="mixerExtL" className="subLabelLarge">
