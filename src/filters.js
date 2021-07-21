@@ -16,6 +16,7 @@ const Filters = (props) => {
   const [resonanceKnob, setResonanceKnob] = useState(0);
   const [filterMEDKnob, setFilterMEDKnob] = useState(0);
   const [filterLFOKnob, setFilterLFOKnob] = useState(0);
+  const [frequencyKnob, setFrequencyKnob] = useState(0);
   return (
     <div className="absolute">
       <div id="filtersTypeS">
@@ -128,7 +129,7 @@ const Filters = (props) => {
       <div id="filtersLineTwo" />
       <div id="frequencyK" className="knobDiv">
         <KnobBigBorder />
-        <KnobBig />
+        <KnobBig rotation={frequencyKnob} setRotation={setFrequencyKnob} />
         <p id="filtersFrequencyKL" className="knobLabel">
           Frequency
         </p>

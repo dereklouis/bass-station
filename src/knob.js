@@ -1,3 +1,4 @@
+import knobSpin from './knobSpin';
 import './styles/knob.css';
 
 let knobTicArr = [];
@@ -7,6 +8,8 @@ for (let i = 0; i < 18; i++) {
 }
 
 const Knob = (props) => {
+  knobSpin(props.rotation, props.setRotation);
+
   let knobRotation = props.rotation;
   let shadowRotation = 0;
   if (knobRotation > 0) {
@@ -15,28 +18,9 @@ const Knob = (props) => {
     shadowRotation = Math.abs(knobRotation);
   }
 
-  let clientStart = null;
-
   const activateKnobAdjust = (e) => {
     e.preventDefault();
-    clientStart = e.clientX;
-    const appContainer = document.getElementById('appContainer');
-    appContainer.style.cursor = 'grabbing';
-    document.addEventListener('mousemove', function (e) {
-      let amountToMove = (e.clientX - clientStart) * 2;
-      let moveDifference = knobRotation + amountToMove;
-      if (
-        clientStart !== null &&
-        moveDifference <= 150 &&
-        moveDifference >= -150
-      ) {
-        props.setRotation(moveDifference);
-      }
-    });
-    document.addEventListener('mouseup', function () {
-      clientStart = null;
-      appContainer.style.cursor = 'default';
-    });
+    knobSpin(e, props.rotation, props.setRotation);
   };
 
   return (
