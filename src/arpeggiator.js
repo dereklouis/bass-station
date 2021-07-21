@@ -7,8 +7,8 @@ import Bulb from './bulb';
 const Arpeggiator = () => {
   const [tempoKnob, setTempoKnob] = useState(0);
   const [rhythmKnob, setRhythmKnob] = useState(0);
-  const [directionKnob, setDirectionKnob] = useState(0);
-  const [aOSKnob, setAOSKnob] = useState(0);
+  const [directionKnob, setDirectionKnob] = useState(-90);
+  const [aOSKnob, setAOSKnob] = useState(-90);
   const [legatoStatus, setLegatoStatus] = useState(false);
   const [latchStatus, setLatchStatus] = useState(false);
   return (
@@ -74,7 +74,11 @@ const Arpeggiator = () => {
       </p>
       <div id="rhythm2K" className="knobDiv">
         <KnobBorder highNoon={false} remove={[5, 6, 7, 8]} />
-        <Knob rotation={directionKnob} setRotation={setDirectionKnob} />
+        <Knob
+          rotation={directionKnob}
+          setRotation={setDirectionKnob}
+          notch={8}
+        />
       </div>
       <p id="arpUpL" className="subLabelLarge">
         Up
@@ -102,7 +106,7 @@ const Arpeggiator = () => {
       </p>
       <div id="arpOctavesK" className="knobDiv">
         <KnobBorder highNoon={false} remove={[1, 2, 3, 4, 5, 6, 7, 8]} />
-        <Knob rotation={aOSKnob} setRotation={setAOSKnob} />
+        <Knob rotation={aOSKnob} setRotation={setAOSKnob} notch={4} />
       </div>
       <p id="AO1L" className="subLabelLarge">
         1

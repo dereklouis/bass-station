@@ -3,7 +3,6 @@ import './styles/envelopes.css';
 import SwitchABC from './switchABC';
 import Fader from './fader';
 import Bulb from './bulb';
-import SwitchAB from './switchAB';
 
 const Envelopes = () => {
   const [eSS, setESS] = useState('B');

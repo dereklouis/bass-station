@@ -1,4 +1,4 @@
-import knobSpin from './knobSpin';
+import { knobSpin } from './knobSpin';
 import './styles/knobBig.css';
 
 let knobBigTicArr = [];
