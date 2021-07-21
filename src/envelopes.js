@@ -7,6 +7,10 @@ import SwitchAB from './switchAB';
 
 const Envelopes = () => {
   const [eSS, setESS] = useState('B');
+  const [attackFader, setAttackFader] = useState(0);
+  const [decayFader, setDecayFader] = useState(0);
+  const [sustainFader, setSustainFader] = useState(0);
+  const [releaseFader, setReleaseFader] = useState(0);
   const [triggeringS, setTriggeringS] = useState('A');
   return (
     <div className="absolute">
@@ -30,26 +34,26 @@ const Envelopes = () => {
         Amp+Mod Env
       </p>
       <div id="fader1">
-        <Fader position={3} />
+        <Fader position={attackFader} setPosition={setAttackFader} />
       </div>
       <div id="envelopesLeftLine" />
       <p id="attackL" className="subLabelLarge">
         Attack
       </p>
       <div id="fader2">
-        <Fader position={2.4} />
+        <Fader position={decayFader} setPosition={setDecayFader} />
       </div>
       <p id="decayL" className="subLabelLarge">
         Decay
       </p>
       <div id="fader3">
-        <Fader position={-1.5} />
+        <Fader position={sustainFader} setPosition={setSustainFader} />
       </div>
       <p id="sustainL" className="subLabelLarge">
         Sustain
       </p>
       <div id="fader4">
-        <Fader position={4} />
+        <Fader position={releaseFader} setPosition={setReleaseFader} />
       </div>
       <p id="releaseL" className="subLabelLarge">
         Release

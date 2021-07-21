@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './styles/fader.css';
 
 const Fader = (props) => {
@@ -7,10 +8,42 @@ const Fader = (props) => {
   }
   const bigLines = [1, 6, 11];
 
-  const position = props.position || 0;
+  const faderMaster = useRef(null);
+  const faderAdjustActive = useRef(false);
+  const clientStart = useRef(0);
+  const restingPlace = useRef(0);
+
+  const activateFaderAdjust = (e) => {
+    e.preventDefault();
+    faderAdjustActive.current = true;
+    clientStart.current = e.clientY;
+    faderMaster.current.style.cursor = 'grabbing';
+  };
+
+  const disengageFaderAdjust = () => {
+    faderAdjustActive.current = false;
+    faderMaster.current.style.cursor = 'default';
+    restingPlace.current = props.position;
+  };
+
+  const adjustFader = (e) => {
+    if (faderAdjustActive.current) {
+      let amountMoved = (e.clientY - clientStart.current) * 0.09;
+      let moveDifference = amountMoved + restingPlace.current;
+      if (moveDifference >= -4.55 && moveDifference <= 4.45) {
+        props.setPosition(moveDifference);
+      }
+    }
+  };
 
   return (
-    <div className="faderMaster">
+    <div
+      className="faderMaster"
+      onMouseUp={disengageFaderAdjust}
+      onMouseLeave={disengageFaderAdjust}
+      onMouseMove={adjustFader}
+      ref={faderMaster}
+    >
       <div className="faderLineBox">
         {faderLineArr.map((line, idx) => {
           if (bigLines.includes(idx + 1)) {
@@ -24,9 +57,9 @@ const Fader = (props) => {
         <div className="faderTrackSplit" />
         <div
           className="faderNub"
-          style={{ transform: `translateY(${position}rem)` }}
+          style={{ transform: `translateY(${props.position}rem)` }}
         >
-          <div className="faderNubTop">
+          <div className="faderNubTop" onMouseDown={activateFaderAdjust}>
             <div className="faderNubTopLine" />
           </div>
         </div>
