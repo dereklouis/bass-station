@@ -4,6 +4,7 @@ import './styles/firstQuarter.css';
 import './styles/secondQuarter.css';
 import './styles/lowerHalf.css';
 import './fonts/digital-7.ttf';
+import MasterBar from './masterBar';
 import Patches from './patches';
 import MasterPanel from './masterPanel';
 import Oscillators from './oscillatorsPanel';
@@ -14,6 +15,7 @@ import Porta from './porta';
 import Lfos from './lFOS';
 import Envelopes from './envelopes';
 import Effects from './effects';
+import MidBar from './midBar';
 import KeysTopper from './keysTopper';
 import OPM from './oPM';
 import Keyboard from './keyboard';
@@ -25,27 +27,7 @@ function App() {
     <div id="appContainer">
       <div id="BSMaster">
         <div id="masterShadowLeft" />
-        <div id="masterBar">
-          <p id="masterL" className="boldLabel">
-            MASTER
-          </p>
-          <div id="masterLVBB1" className="VBarBreak" />
-          <div id="masterLBB1" className="barBreak" />
-          <p id="oscillatorsL" className="boldLabel">
-            OSCILLATORS
-          </p>
-          <div id="masterLVBB2" className="VBarBreak" />
-          <div id="masterLBB2" className="barBreak" />
-          <p id="mixerL" className="boldLabel">
-            MIXER
-          </p>
-          <div id="masterLVBB3" className="VBarBreak" />
-          <div id="masterLBB3" className="barBreak" />
-          <p id="filtersL" className="boldLabel">
-            FILTERS
-          </p>
-        </div>
-        <div id="mainBarBottom" />
+        <MasterBar />
         <MasterPanel
           patchNumber={patchNumber}
           setPatchNumber={setPatchNumber}
@@ -59,31 +41,7 @@ function App() {
         <Lfos patch={patch} />
         <Envelopes patch={patch} />
         <Effects patch={patch} />
-        <div id="midBar">
-          <p id="arpeggiatorL" className="boldLabel">
-            ARPEGGIATOR
-          </p>
-          <div id="midLVBB1" className="VBarBreak" />
-          <div id="midLBB1" className="barBreak" />
-          <p id="portaL" className="boldLabel">
-            PORTA
-          </p>
-          <div id="midLVBB2" className="VBarBreak" />
-          <div id="midLBB2" className="barBreak" />
-          <p id="lfosL" className="boldLabel">
-            LFOS
-          </p>
-          <div id="midLVBB3" className="VBarBreak" />
-          <div id="midLBB3" className="barBreak" />
-          <p id="envelopesL" className="boldLabel">
-            ENVELOPES
-          </p>
-          <div id="midLVBB4" className="VBarBreak" />
-          <div id="midLBB4" className="barBreak" />
-          <p id="effectsL" className="boldLabel">
-            EFFECTS
-          </p>
-        </div>
+        <MidBar />
         <KeysTopper />
         <OPM />
         <Keyboard />
