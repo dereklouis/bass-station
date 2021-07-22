@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import './styles/oPM.css';
 import Wheel from './wheel';
 
-// Lowest Position = 9.5rem
-// Highest Position = 0rem
-
 const OPM = () => {
+  const [pitchWheel, setPitchWheel] = useState(3.75);
+  const [modWheel, setModWheel] = useState(7.5);
   return (
     <div className="absolute">
       <div id="oPMTopLine" />
@@ -22,10 +22,10 @@ const OPM = () => {
         Reset
       </p>
       <div id="pitchWheel">
-        <Wheel position={4.75} />
+        <Wheel position={pitchWheel} setPosition={setPitchWheel} type="Pitch" />
       </div>
       <div id="modWheel">
-        <Wheel position={9.5} />
+        <Wheel position={modWheel} setPosition={setModWheel} type="Mod" />
       </div>
       <p id="oPMPitchL" className="subLabelLarge">
         Pitch
