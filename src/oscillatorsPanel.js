@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/oscillatorsPanel.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
@@ -7,17 +7,32 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Oscillators = (props) => {
-  const [coarseKnob, setCoarseKnob] = useState(0);
-  const [fineKnob, setFineKnob] = useState(0);
-  const [mEDKnob, setMEDKnob] = useState(0);
-  const [oSCLFO1Knob, setOSCLFO1Knob] = useState(0);
-  const [pulseWidthKnob, setPulseWidthKnob] = useState(0);
-  const [rangeSelection, setRangeSelection] = useState(2);
-  const [waveformSelection, setwaveformSelection] = useState(3);
-  const [subOscWaveS, setSubOscWaveS] = useState('C');
-  const [oscSelectS, setOscSelectS] = useState('A');
-  const [octaveSelectS, setOctaveSelectS] = useState('A');
-  const [mMLS, setMMLS] = useState('B');
+  const { patch } = props;
+  const [coarseKnob, setCoarseKnob] = useState(patch.coarseK);
+  const [fineKnob, setFineKnob] = useState(patch.fineK);
+  const [mEDKnob, setMEDKnob] = useState(patch.MEDK);
+  const [oSCLFO1Knob, setOSCLFO1Knob] = useState(patch.LFO1K);
+  const [pulseWidthKnob, setPulseWidthKnob] = useState(patch.pulseWidthK);
+  const [rangeSelection, setRangeSelection] = useState(patch.rangeB);
+  const [waveformSelection, setwaveformSelection] = useState(patch.waveformB);
+  const [oscSelectS, setOscSelectS] = useState(patch.oscSelectS);
+  const [mMLS, setMMLS] = useState(patch.pulseWidthS);
+  const [octaveSelectS, setOctaveSelectS] = useState(patch.subOscOctaveS);
+  const [subOscWaveS, setSubOscWaveS] = useState(patch.subOscWaveS);
+
+  useEffect(() => {
+    setCoarseKnob(patch.coarseK);
+    setFineKnob(patch.fineK);
+    setMEDKnob(patch.MEDK);
+    setOSCLFO1Knob(patch.LFO1K);
+    setPulseWidthKnob(patch.pulseWidthK);
+    setRangeSelection(patch.rangeB);
+    setwaveformSelection(patch.waveformB);
+    setOscSelectS(patch.oscSelectS);
+    setMMLS(patch.pulseWidthS);
+    setOctaveSelectS(patch.subOscOctaveS);
+    setSubOscWaveS(patch.subOscWaveS);
+  }, [patch]);
 
   return (
     <div className="absolute">

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/filters.css';
 import Knob from './knob';
 import KnobBig from './knobBig';
@@ -9,14 +9,27 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Filters = (props) => {
-  const [filtersTypeS, setFiltersTypeS] = useState('A');
-  const [filtersSlopS, setFiltersSlopS] = useState('B');
-  const [filtersShapeS, setFiltersShapeS] = useState('A');
-  const [overdriveKnob, setOverdriveKnob] = useState(0);
-  const [resonanceKnob, setResonanceKnob] = useState(0);
-  const [filterMEDKnob, setFilterMEDKnob] = useState(0);
-  const [filterLFOKnob, setFilterLFOKnob] = useState(0);
-  const [frequencyKnob, setFrequencyKnob] = useState(0);
+  const { patch } = props;
+  const [filtersTypeS, setFiltersTypeS] = useState(patch.filtersTypeS);
+  const [overdriveKnob, setOverdriveKnob] = useState(patch.overdriveK);
+  const [resonanceKnob, setResonanceKnob] = useState(patch.resonanceK);
+  const [filtersSlopeS, setFiltersSlopeS] = useState(patch.filtersSlopeS);
+  const [frequencyKnob, setFrequencyKnob] = useState(patch.frequencyK);
+  const [filtersShapeS, setFiltersShapeS] = useState(patch.filtersShapeS);
+  const [filterMEDKnob, setFilterMEDKnob] = useState(patch.filtersMEDK);
+  const [filterLFOKnob, setFilterLFOKnob] = useState(patch.filtersLFO2K);
+
+  useEffect(() => {
+    setFiltersTypeS(patch.filtersTypeS);
+    setOverdriveKnob(patch.overdriveK);
+    setResonanceKnob(patch.resonanceK);
+    setFiltersSlopeS(patch.filtersSlopeS);
+    setFrequencyKnob(patch.frequencyK);
+    setFiltersShapeS(patch.filtersShapeS);
+    setFilterMEDKnob(patch.filtersMEDK);
+    setFilterLFOKnob(patch.filtersLFO2K);
+  }, [patch]);
+
   return (
     <div className="absolute">
       <div id="filtersTypeS">
@@ -44,21 +57,21 @@ const Filters = (props) => {
       <div id="filtersSlopeS">
         <SwitchAB
           orientation={'Horizontal'}
-          position={filtersSlopS}
-          setPosition={setFiltersSlopS}
+          position={filtersSlopeS}
+          setPosition={setFiltersSlopeS}
         />
       </div>
       <p id="filtersSlopeL" className="subLabelLarge">
         Slope
       </p>
       <div id="filtersSlope1Bulb">
-        <Bulb on={filtersSlopS === 'A'} />
+        <Bulb on={filtersSlopeS === 'A'} />
       </div>
       <p id="filters12DBL" className="subLabelXSmall">
         12dB
       </p>
       <div id="filtersSlope2Bulb">
-        <Bulb on={filtersSlopS === 'B'} />
+        <Bulb on={filtersSlopeS === 'B'} />
       </div>
       <p id="filters24DBL" className="subLabelXSmall">
         24dB

@@ -1,9 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import './App.css';
 import './styles/firstQuarter.css';
 import './styles/secondQuarter.css';
 import './styles/lowerHalf.css';
 import './fonts/digital-7.ttf';
+import Patches from './patches';
 import MasterPanel from './masterPanel';
 import Oscillators from './oscillatorsPanel';
 import Mixer from './mixer';
@@ -18,6 +19,8 @@ import OPM from './oPM';
 import Keyboard from './keyboard';
 
 function App() {
+  const [patchNumber, setPatchNumber] = useState(0);
+  const patch = Patches[patchNumber] ? Patches[patchNumber] : Patches[0];
   return (
     <div id="appContainer">
       <div id="BSMaster">
@@ -43,15 +46,19 @@ function App() {
           </p>
         </div>
         <div id="mainBarBottom" />
-        <MasterPanel />
-        <Oscillators />
-        <Mixer />
-        <Filters />
-        <Arpeggiator />
-        <Porta />
-        <Lfos />
-        <Envelopes />
-        <Effects />
+        <MasterPanel
+          patchNumber={patchNumber}
+          setPatchNumber={setPatchNumber}
+          patch={patch}
+        />
+        <Oscillators patch={patch} />
+        <Mixer patch={patch} />
+        <Filters patch={patch} />
+        <Arpeggiator patch={patch} />
+        <Porta patch={patch} />
+        <Lfos patch={patch} />
+        <Envelopes patch={patch} />
+        <Effects patch={patch} />
         <div id="midBar">
           <p id="arpeggiatorL" className="boldLabel">
             ARPEGGIATOR

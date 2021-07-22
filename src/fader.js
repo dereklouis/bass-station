@@ -11,7 +11,7 @@ const Fader = (props) => {
   const faderMaster = useRef(null);
   const faderAdjustActive = useRef(false);
   const clientStart = useRef(0);
-  const restingPlace = useRef(0);
+  const restingPlace = useRef(props.position);
 
   const activateFaderAdjust = (e) => {
     e.preventDefault();
@@ -47,9 +47,9 @@ const Fader = (props) => {
       <div className="faderLineBox">
         {faderLineArr.map((line, idx) => {
           if (bigLines.includes(idx + 1)) {
-            return <div className="faderLineBig" />;
+            return <div className="faderLineBig" key={`line${idx}`} />;
           } else {
-            return <div className="faderLineSmall" />;
+            return <div className="faderLineSmall" key={`line${idx}`} />;
           }
         })}
       </div>

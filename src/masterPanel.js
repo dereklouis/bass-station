@@ -4,8 +4,9 @@ import KnobBorder from './knobBorder';
 import './styles/masterPanel.css';
 
 const MasterPanel = (props) => {
-  const [patchNumber, setPatchNumber] = useState(0);
-  const [volumeKnob, setVolumeKnob] = useState(0);
+  const { patchNumber, setPatchNumber, patch } = props;
+
+  const [volumeKnob, setVolumeKnob] = useState(patch.volumeK);
   return (
     <div className="absolute">
       <div id="screen">

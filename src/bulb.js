@@ -1,11 +1,14 @@
 import './styles/bulb.css';
 
 const Bulb = (props) => {
-  const { on } = props;
+  const { on, blinkClass, animation } = props;
   return (
     <div className="absolute">
-      {props.blinkClass ? (
-        <div className={`bulbMaster ${props.blinkClass}`} />
+      {blinkClass ? (
+        <div
+          className={`bulbMaster ${blinkClass}`}
+          style={{ animation: `${animation}` }}
+        />
       ) : (
         <div className={`bulbMaster ${on ? 'bulbOn' : 'bulbOff'}`} />
       )}

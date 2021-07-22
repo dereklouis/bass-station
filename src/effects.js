@@ -1,11 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/effects.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 
-const Effects = () => {
-  const [distortionKnob, setDistortionKnob] = useState(0);
-  const [oFMKnob, setOFMKnob] = useState(0);
+const Effects = (props) => {
+  const { patch } = props;
+  const [distortionKnob, setDistortionKnob] = useState(patch.distortionK);
+  const [oFMKnob, setOFMKnob] = useState(patch.oFMK);
+
+  useEffect(() => {
+    setDistortionKnob(patch.distortionK);
+    setOFMKnob(patch.oFMK);
+  }, [patch]);
+
   return (
     <div className="absolute">
       <div id="distortionK" className="knobDiv">

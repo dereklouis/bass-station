@@ -1,15 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/mixer.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import SwitchABC from './switchABC';
 
-const Mixer = () => {
-  const [oSC1Knob, setOSC1Knob] = useState(0);
-  const [oSC2Knob, setOSC2Knob] = useState(0);
-  const [eRNS, setERNS] = useState('A');
-  const [subOscKnob, setSubOscKnob] = useState(0);
-  const [eRNKnob, setERNKnob] = useState(0);
+const Mixer = (props) => {
+  const { patch } = props;
+  const [oSC1Knob, setOSC1Knob] = useState(patch.mixerOsc1K);
+  const [oSC2Knob, setOSC2Knob] = useState(patch.mixerOsc2K);
+  const [eRNS, setERNS] = useState(patch.mixerUtilityS);
+  const [subOscKnob, setSubOscKnob] = useState(patch.mixerSubK);
+  const [eRNKnob, setERNKnob] = useState(patch.mixerUtilityK);
+
+  useEffect(() => {
+    setOSC1Knob(patch.mixerOsc1K);
+    setOSC2Knob(patch.mixerOsc2K);
+    setERNS(patch.mixerUtilityS);
+    setSubOscKnob(patch.mixerSubK);
+    setERNKnob(patch.mixerUtilityK);
+  }, [patch]);
+
   return (
     <div className="absolute">
       <div id="mixerOsc1K" className="knobDiv">

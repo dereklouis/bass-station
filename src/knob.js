@@ -39,6 +39,7 @@ const Knob = (props) => {
         <div
           className={`knobTics KnobTic${idx + 1}`}
           style={{ transform: `rotate(${idx * 20}deg)` }}
+          key={`knobTic${idx}`}
         >
           <div className="knobTic" />
         </div>

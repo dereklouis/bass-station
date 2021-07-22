@@ -1,16 +1,31 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/arpeggiator.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import Bulb from './bulb';
 
-const Arpeggiator = () => {
-  const [tempoKnob, setTempoKnob] = useState(0);
-  const [rhythmKnob, setRhythmKnob] = useState(0);
-  const [directionKnob, setDirectionKnob] = useState(-90);
-  const [aOSKnob, setAOSKnob] = useState(-90);
-  const [legatoStatus, setLegatoStatus] = useState(false);
-  const [latchStatus, setLatchStatus] = useState(false);
+const Arpeggiator = (props) => {
+  const { patch } = props;
+  const [tempoKnob, setTempoKnob] = useState(patch.tempoK);
+  const [rhythmKnob, setRhythmKnob] = useState(patch.rhythmK);
+  const [directionKnob, setDirectionKnob] = useState(patch.rhythm2K);
+  const [legatoStatus, setLegatoStatus] = useState(patch.arpLegatoBulb);
+  const [latchStatus, setLatchStatus] = useState(patch.arpLatchBulb);
+  const [aOSKnob, setAOSKnob] = useState(patch.arpOctavesK);
+
+  useEffect(() => {
+    setTempoKnob(patch.tempoK);
+    setRhythmKnob(patch.rhythmK);
+    setDirectionKnob(patch.rhythm2K);
+    setLegatoStatus(patch.arpLegatoBulb);
+    setLatchStatus(patch.arpLatchBulb);
+    setAOSKnob(patch.arpOctavesK);
+  }, [patch]);
+
+  const convertBPM = (position) => {
+    return (60 / ((position + 150) * 0.666 + 40)) * 1000;
+  };
+
   return (
     <div className="absolute">
       <div id="tempoK" className="knobDiv">
@@ -27,7 +42,12 @@ const Arpeggiator = () => {
         240
       </p>
       <div id="arpTempoBulb">
-        <Bulb blinkClass={'tempoBlink'} />
+        <Bulb
+          blinkClass={'tempoBlink'}
+          animation={`tempoBlink ${convertBPM(
+            tempoKnob
+          )}ms step-start 0s infinite`}
+        />
       </div>
       <div id="arpLegatoBulb">
         <Bulb on={legatoStatus} />

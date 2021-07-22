@@ -16,6 +16,7 @@ const KnobBorder = (props) => {
             <div
               className={`knobBorderDot knobBorder${idx + 1}`}
               style={{ transform: `rotate(${idx * 30}deg)` }}
+              key={`knobDot${idx}`}
             >
               <div className="knobBorderDotDot" style={{ display: 'none' }} />
             </div>
@@ -25,6 +26,7 @@ const KnobBorder = (props) => {
             <div
               className={`knobBorderDot knobBorder${idx + 1}`}
               style={{ transform: `rotate(${idx * 30}deg)` }}
+              key={`knobDot${idx}`}
             >
               <div className="highNoon" />
             </div>
@@ -34,6 +36,7 @@ const KnobBorder = (props) => {
             <div
               className={`knobBorderDot knobBorder${idx + 1}`}
               style={{ transform: `rotate(${idx * 30}deg)` }}
+              key={`knobDot${idx}`}
             >
               <div className="knobBorderDotDot" />
             </div>

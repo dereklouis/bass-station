@@ -15,6 +15,7 @@ const KnobBigBorder = (props) => {
             <div
               className={`knobBigBorderDot knobBigBorder${idx + 1}`}
               style={{ transform: `rotate(${idx * 15}deg)` }}
+              key={`knobBigDot${idx}`}
             >
               <div className="knobBigBorderDotDot" />
             </div>
@@ -24,6 +25,7 @@ const KnobBigBorder = (props) => {
             <div
               className={`knobBigBorderDot knobBigBorder${idx + 1}`}
               style={{ transform: `rotate(${idx * 15}deg)` }}
+              key={`knobBigDot${idx}`}
             >
               <div className="knobBigBorderDotDotSmall" />
             </div>

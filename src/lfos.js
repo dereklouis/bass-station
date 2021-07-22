@@ -1,16 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/lFOS.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import Bulb from './bulb';
 import SwitchAB from './switchAB';
 
-const LFOS = () => {
-  const [lfo1Wave, setLfo1Wave] = useState(1);
-  const [lFO1Knob, setLFO1Knob] = useState(0);
-  const [speedS, setSpeedS] = useState('B');
-  const [lFO2Knob, setLFO2Knob] = useState(0);
-  const [lfo2Wave, setLfo2Wave] = useState(1);
+const LFOS = (props) => {
+  const { patch } = props;
+  const [lFO1Wave, setLFO1Wave] = useState(patch.lFO1Wave);
+  const [lFO1Knob, setLFO1Knob] = useState(patch.lfosLFO1K);
+  const [lFO2Knob, setLFO2Knob] = useState(patch.lfosLFO2K);
+  const [lFO2Wave, setLFO2Wave] = useState(patch.lFO2Wave);
+  const [speedS, setSpeedS] = useState(patch.speedDelayS);
+
+  useEffect(() => {
+    setLFO1Wave(patch.lFO1Wave);
+    setLFO1Knob(patch.lfosLFO1K);
+    setLFO2Knob(patch.lfosLFO2K);
+    setLFO2Wave(patch.lFO2Wave);
+    setSpeedS(patch.speedDelayS);
+  }, [patch]);
+
+  const convertBPM = (position) => {
+    return (60 / ((position + 150) * 0.666 + 40)) * 500;
+  };
 
   return (
     <div className="absolute">
@@ -18,24 +31,38 @@ const LFOS = () => {
         id="lfosLeftB"
         className="button"
         onClick={() => {
-          if (lfo1Wave < 4) {
-            setLfo1Wave(lfo1Wave + 1);
+          if (lFO1Wave < 4) {
+            setLFO1Wave(lFO1Wave + 1);
           } else {
-            setLfo1Wave(1);
+            setLFO1Wave(1);
           }
         }}
       />
       <div id="lfosLeftBulb1">
-        <Bulb blinkClass={lfo1Wave === 1 && 'lfosLeftBlink'} />
+        <Bulb
+          blinkClass={lFO1Wave === 1 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(lFO1Knob)}ms linear 0s infinite`}
+        />
       </div>
       <div id="lfosLeftBulb2">
-        <Bulb blinkClass={lfo1Wave === 2 && 'lfosLeftBlink'} />
+        <Bulb
+          blinkClass={lFO1Wave === 2 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(lFO1Knob)}ms linear 0s infinite`}
+        />
       </div>
       <div id="lfosLeftBulb3">
-        <Bulb blinkClass={lfo1Wave === 3 && 'lfosLeftBlink'} />
+        <Bulb
+          blinkClass={lFO1Wave === 3 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(lFO1Knob)}ms linear 0s infinite`}
+        />
       </div>
       <div id="lfosLeftBulb4">
-        <Bulb blinkClass={lfo1Wave === 4 && 'lfosLeftBlink'} />
+        <Bulb
+          blinkClass={lFO1Wave === 4 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(
+            lFO1Knob
+          )}ms step-start 0s infinite`}
+        />
       </div>
       <p id="lfosLeftTriL" className="subLabelSmall">
         V
@@ -81,25 +108,39 @@ const LFOS = () => {
         S+H
       </p>
       <div id="lfosRightBulb1">
-        <Bulb blinkClass={lfo2Wave === 1 && 'lfosRightBlink'} />
+        <Bulb
+          blinkClass={lFO2Wave === 1 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(lFO2Knob)}ms linear 0s infinite`}
+        />
       </div>
       <div id="lfosRightBulb2">
-        <Bulb blinkClass={lfo2Wave === 2 && 'lfosRightBlink'} />
+        <Bulb
+          blinkClass={lFO2Wave === 2 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(lFO2Knob)}ms linear 0s infinite`}
+        />
       </div>
       <div id="lfosRightBulb3">
-        <Bulb blinkClass={lfo2Wave === 3 && 'lfosRightBlink'} />
+        <Bulb
+          blinkClass={lFO2Wave === 3 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(lFO2Knob)}ms linear 0s infinite`}
+        />
       </div>
       <div id="lfosRightBulb4">
-        <Bulb blinkClass={lfo2Wave === 4 && 'lfosRightBlink'} />
+        <Bulb
+          blinkClass={lFO2Wave === 4 && 'lFOSBlink'}
+          animation={`lFOSBlink ${convertBPM(
+            lFO2Knob
+          )}ms step-start 0s infinite`}
+        />
       </div>
       <div
         id="lfosRightB"
         className="button"
         onClick={() => {
-          if (lfo2Wave < 4) {
-            setLfo2Wave(lfo2Wave + 1);
+          if (lFO2Wave < 4) {
+            setLFO2Wave(lFO2Wave + 1);
           } else {
-            setLfo2Wave(1);
+            setLFO2Wave(1);
           }
         }}
       />

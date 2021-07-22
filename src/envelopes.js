@@ -1,16 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/envelopes.css';
 import SwitchABC from './switchABC';
 import Fader from './fader';
 import Bulb from './bulb';
 
-const Envelopes = () => {
-  const [eSS, setESS] = useState('B');
-  const [attackFader, setAttackFader] = useState(0);
-  const [decayFader, setDecayFader] = useState(0);
-  const [sustainFader, setSustainFader] = useState(0);
-  const [releaseFader, setReleaseFader] = useState(0);
-  const [triggeringS, setTriggeringS] = useState('A');
+const Envelopes = (props) => {
+  const { patch } = props;
+  const [eSS, setESS] = useState(patch.envSelectS);
+  const [attackFader, setAttackFader] = useState(patch.fader1);
+  const [decayFader, setDecayFader] = useState(patch.fader2);
+  const [sustainFader, setSustainFader] = useState(patch.fader3);
+  const [releaseFader, setReleaseFader] = useState(patch.fader4);
+  const [triggeringS, setTriggeringS] = useState(patch.triggeringS);
+
+  useEffect(() => {
+    setESS(patch.envSelectS);
+    setAttackFader(patch.fader1);
+    setDecayFader(patch.fader2);
+    setSustainFader(patch.fader3);
+    setReleaseFader(patch.fader4);
+    setTriggeringS(patch.triggeringS);
+  }, [patch]);
+
   return (
     <div className="absolute">
       <div id="envSelectS">

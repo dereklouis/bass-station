@@ -11,8 +11,8 @@ const Keyboard = () => {
     <div id="keyboardMaster">
       <div id="keyboardDownSlope" />
       <div id="keyContainer">
-        {whiteKeyArr.map((key) => (
-          <WhiteKey />
+        {whiteKeyArr.map((key, idx) => (
+          <WhiteKey key={`whiteKey${idx}`} />
         ))}
       </div>
       <div id="BK1">

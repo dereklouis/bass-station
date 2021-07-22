@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/porta.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 
-const Porta = () => {
-  const [glideTimeKnob, setGlideTimeKnob] = useState(0);
+const Porta = (props) => {
+  const { patch } = props;
+  const [glideTimeKnob, setGlideTimeKnob] = useState(patch.glideTimeK);
+
+  useEffect(() => {
+    setGlideTimeKnob(patch.glideTimeK);
+  }, [patch]);
+
   return (
     <div className="absolute">
       <div id="glideTimeK" className="knobDiv">
