@@ -7,32 +7,42 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Oscillators = (props) => {
-  const { patch } = props;
-  const [coarseKnob, setCoarseKnob] = useState(patch.coarseK);
-  const [fineKnob, setFineKnob] = useState(patch.fineK);
-  const [mEDKnob, setMEDKnob] = useState(patch.MEDK);
-  const [oSCLFO1Knob, setOSCLFO1Knob] = useState(patch.LFO1K);
-  const [pulseWidthKnob, setPulseWidthKnob] = useState(patch.pulseWidthK);
-  const [rangeSelection, setRangeSelection] = useState(patch.rangeB);
-  const [waveformSelection, setwaveformSelection] = useState(patch.waveformB);
-  const [oscSelectS, setOscSelectS] = useState(patch.oscSelectS);
-  const [mMLS, setMMLS] = useState(patch.pulseWidthS);
-  const [octaveSelectS, setOctaveSelectS] = useState(patch.subOscOctaveS);
-  const [subOscWaveS, setSubOscWaveS] = useState(patch.subOscWaveS);
+  const { patches, patchNumber } = props;
+  const [coarseKnob, setCoarseKnob] = useState(patches[patchNumber].coarseK);
+  const [fineKnob, setFineKnob] = useState(patches[patchNumber].fineK);
+  const [mEDKnob, setMEDKnob] = useState(patches[patchNumber].MEDK);
+  const [oSCLFO1Knob, setOSCLFO1Knob] = useState(patches[patchNumber].LFO1K);
+  const [pulseWidthKnob, setPulseWidthKnob] = useState(
+    patches[patchNumber].pulseWidthK
+  );
+  const [rangeSelection, setRangeSelection] = useState(
+    patches[patchNumber].rangeB
+  );
+  const [waveformSelection, setwaveformSelection] = useState(
+    patches[patchNumber].waveformB
+  );
+  const [oscSelectS, setOscSelectS] = useState(patches[patchNumber].oscSelectS);
+  const [mMLS, setMMLS] = useState(patches[patchNumber].pulseWidthS);
+  const [octaveSelectS, setOctaveSelectS] = useState(
+    patches[patchNumber].subOscOctaveS
+  );
+  const [subOscWaveS, setSubOscWaveS] = useState(
+    patches[patchNumber].subOscWaveS
+  );
 
   useEffect(() => {
-    setCoarseKnob(patch.coarseK);
-    setFineKnob(patch.fineK);
-    setMEDKnob(patch.MEDK);
-    setOSCLFO1Knob(patch.LFO1K);
-    setPulseWidthKnob(patch.pulseWidthK);
-    setRangeSelection(patch.rangeB);
-    setwaveformSelection(patch.waveformB);
-    setOscSelectS(patch.oscSelectS);
-    setMMLS(patch.pulseWidthS);
-    setOctaveSelectS(patch.subOscOctaveS);
-    setSubOscWaveS(patch.subOscWaveS);
-  }, [patch]);
+    setCoarseKnob(patches[patchNumber].coarseK);
+    setFineKnob(patches[patchNumber].fineK);
+    setMEDKnob(patches[patchNumber].MEDK);
+    setOSCLFO1Knob(patches[patchNumber].LFO1K);
+    setPulseWidthKnob(patches[patchNumber].pulseWidthK);
+    setRangeSelection(patches[patchNumber].rangeB);
+    setwaveformSelection(patches[patchNumber].waveformB);
+    setOscSelectS(patches[patchNumber].oscSelectS);
+    setMMLS(patches[patchNumber].pulseWidthS);
+    setOctaveSelectS(patches[patchNumber].subOscOctaveS);
+    setSubOscWaveS(patches[patchNumber].subOscWaveS);
+  }, [patches, patchNumber]);
 
   return (
     <div className="absolute">

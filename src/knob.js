@@ -8,20 +8,21 @@ for (let i = 0; i < 18; i++) {
 }
 
 const Knob = (props) => {
-  let knobRotation = props.rotation;
+  const { rotation, setRotation, notch } = props;
+
   let shadowRotation = 0;
-  if (knobRotation > 0) {
-    shadowRotation = -Math.abs(knobRotation);
+  if (rotation > 0) {
+    shadowRotation = -Math.abs(rotation);
   } else {
-    shadowRotation = Math.abs(knobRotation);
+    shadowRotation = Math.abs(rotation);
   }
 
   const activateKnobAdjust = (e) => {
     e.preventDefault();
-    if (props.notch === undefined) {
-      knobSpin(e, props.rotation, props.setRotation);
+    if (notch === undefined) {
+      knobSpin(e, rotation, setRotation);
     } else {
-      knobSpinNotch(e, props.rotation, props.setRotation, props.notch);
+      knobSpinNotch(e, rotation, setRotation, notch);
     }
   };
 
@@ -29,7 +30,7 @@ const Knob = (props) => {
     <div
       className="knobMaster"
       onMouseDown={activateKnobAdjust}
-      style={{ transform: `rotate(${knobRotation}deg)` }}
+      style={{ transform: `rotate(${rotation}deg)` }}
     >
       <div
         className="knobMasterShadow"

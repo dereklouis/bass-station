@@ -4,12 +4,14 @@ import Knob from './knob';
 import KnobBorder from './knobBorder';
 
 const Porta = (props) => {
-  const { patch } = props;
-  const [glideTimeKnob, setGlideTimeKnob] = useState(patch.glideTimeK);
+  const { patches, patchNumber } = props;
+  const [glideTimeKnob, setGlideTimeKnob] = useState(
+    patches[patchNumber].glideTimeK
+  );
 
   useEffect(() => {
-    setGlideTimeKnob(patch.glideTimeK);
-  }, [patch]);
+    setGlideTimeKnob(patches[patchNumber].glideTimeK);
+  }, [patches, patchNumber]);
 
   return (
     <div className="absolute">

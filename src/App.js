@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './App.css';
 import './styles/firstQuarter.css';
 import './styles/secondQuarter.css';
@@ -20,34 +20,36 @@ import KeysTopper from './keysTopper';
 import OPM from './oPM';
 import Keyboard from './keyboard';
 
+const patchesClone = { ...Patches };
+
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
-  const patch = Patches[patchNumber] ? Patches[patchNumber] : Patches[0];
+  const [patches, setPatches] = useState(patchesClone);
+
   return (
     <div id="appContainer">
       <div id="BSMaster">
         <div id="masterShadowLeft" />
         <MasterBar />
         <MasterPanel
+          patches={patches}
+          setPatches={setPatches}
           patchNumber={patchNumber}
           setPatchNumber={setPatchNumber}
-          patch={patch}
         />
-        <Oscillators patch={patch} />
-        <Mixer patch={patch} />
-        <Filters patch={patch} />
-        <Arpeggiator patch={patch} />
-        <Porta patch={patch} />
-        <Lfos patch={patch} />
-        <Envelopes patch={patch} />
-        <Effects patch={patch} />
+        <Oscillators patches={patches} patchNumber={patchNumber} />
+        <Mixer patches={patches} patchNumber={patchNumber} />
+        <Filters patches={patches} patchNumber={patchNumber} />
+        <Arpeggiator patches={patches} patchNumber={patchNumber} />
+        <Porta patches={patches} patchNumber={patchNumber} />
+        <Lfos patches={patches} patchNumber={patchNumber} />
+        <Envelopes patches={patches} patchNumber={patchNumber} />
+        <Effects patches={patches} patchNumber={patchNumber} />
         <MidBar />
         <KeysTopper />
         <OPM />
         <Keyboard />
         <div id="masterShadowRight" />
-        {/* <div className="testH" />
-        <div className="testV" /> */}
       </div>
     </div>
   );

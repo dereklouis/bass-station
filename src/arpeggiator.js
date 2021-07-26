@@ -5,22 +5,28 @@ import KnobBorder from './knobBorder';
 import Bulb from './bulb';
 
 const Arpeggiator = (props) => {
-  const { patch } = props;
-  const [tempoKnob, setTempoKnob] = useState(patch.tempoK);
-  const [rhythmKnob, setRhythmKnob] = useState(patch.rhythmK);
-  const [directionKnob, setDirectionKnob] = useState(patch.rhythm2K);
-  const [legatoStatus, setLegatoStatus] = useState(patch.arpLegatoBulb);
-  const [latchStatus, setLatchStatus] = useState(patch.arpLatchBulb);
-  const [aOSKnob, setAOSKnob] = useState(patch.arpOctavesK);
+  const { patches, patchNumber } = props;
+  const [tempoKnob, setTempoKnob] = useState(patches[patchNumber].tempoK);
+  const [rhythmKnob, setRhythmKnob] = useState(patches[patchNumber].rhythmK);
+  const [directionKnob, setDirectionKnob] = useState(
+    patches[patchNumber].rhythm2K
+  );
+  const [legatoStatus, setLegatoStatus] = useState(
+    patches[patchNumber].arpLegatoBulb
+  );
+  const [latchStatus, setLatchStatus] = useState(
+    patches[patchNumber].arpLatchBulb
+  );
+  const [aOSKnob, setAOSKnob] = useState(patches[patchNumber].arpOctavesK);
 
   useEffect(() => {
-    setTempoKnob(patch.tempoK);
-    setRhythmKnob(patch.rhythmK);
-    setDirectionKnob(patch.rhythm2K);
-    setLegatoStatus(patch.arpLegatoBulb);
-    setLatchStatus(patch.arpLatchBulb);
-    setAOSKnob(patch.arpOctavesK);
-  }, [patch]);
+    setTempoKnob(patches[patchNumber].tempoK);
+    setRhythmKnob(patches[patchNumber].rhythmK);
+    setDirectionKnob(patches[patchNumber].rhythm2K);
+    setLegatoStatus(patches[patchNumber].arpLegatoBulb);
+    setLatchStatus(patches[patchNumber].arpLatchBulb);
+    setAOSKnob(patches[patchNumber].arpOctavesK);
+  }, [patches, patchNumber]);
 
   const convertBPM = (position) => {
     return (60 / ((position + 150) * 0.666 + 40)) * 1000;

@@ -285,4 +285,10 @@ const Patches = {
   },
 };
 
+const patchClone = { ...Patches[0] };
+
+while (Object.keys(Patches).length < 128) {
+  Patches[Object.keys(Patches).length] = patchClone;
+}
+
 export default Patches;

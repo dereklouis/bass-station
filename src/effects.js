@@ -4,14 +4,16 @@ import Knob from './knob';
 import KnobBorder from './knobBorder';
 
 const Effects = (props) => {
-  const { patch } = props;
-  const [distortionKnob, setDistortionKnob] = useState(patch.distortionK);
-  const [oFMKnob, setOFMKnob] = useState(patch.oFMK);
+  const { patches, patchNumber } = props;
+  const [distortionKnob, setDistortionKnob] = useState(
+    patches[patchNumber].distortionK
+  );
+  const [oFMKnob, setOFMKnob] = useState(patches[patchNumber].oFMK);
 
   useEffect(() => {
-    setDistortionKnob(patch.distortionK);
-    setOFMKnob(patch.oFMK);
-  }, [patch]);
+    setDistortionKnob(patches[patchNumber].distortionK);
+    setOFMKnob(patches[patchNumber].oFMK);
+  }, [patches, patchNumber]);
 
   return (
     <div className="absolute">

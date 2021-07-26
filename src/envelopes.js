@@ -5,22 +5,24 @@ import Fader from './fader';
 import Bulb from './bulb';
 
 const Envelopes = (props) => {
-  const { patch } = props;
-  const [eSS, setESS] = useState(patch.envSelectS);
-  const [attackFader, setAttackFader] = useState(patch.fader1);
-  const [decayFader, setDecayFader] = useState(patch.fader2);
-  const [sustainFader, setSustainFader] = useState(patch.fader3);
-  const [releaseFader, setReleaseFader] = useState(patch.fader4);
-  const [triggeringS, setTriggeringS] = useState(patch.triggeringS);
+  const { patches, patchNumber } = props;
+  const [eSS, setESS] = useState(patches[patchNumber].envSelectS);
+  const [attackFader, setAttackFader] = useState(patches[patchNumber].fader1);
+  const [decayFader, setDecayFader] = useState(patches[patchNumber].fader2);
+  const [sustainFader, setSustainFader] = useState(patches[patchNumber].fader3);
+  const [releaseFader, setReleaseFader] = useState(patches[patchNumber].fader4);
+  const [triggeringS, setTriggeringS] = useState(
+    patches[patchNumber].triggeringS
+  );
 
   useEffect(() => {
-    setESS(patch.envSelectS);
-    setAttackFader(patch.fader1);
-    setDecayFader(patch.fader2);
-    setSustainFader(patch.fader3);
-    setReleaseFader(patch.fader4);
-    setTriggeringS(patch.triggeringS);
-  }, [patch]);
+    setESS(patches[patchNumber].envSelectS);
+    setAttackFader(patches[patchNumber].fader1);
+    setDecayFader(patches[patchNumber].fader2);
+    setSustainFader(patches[patchNumber].fader3);
+    setReleaseFader(patches[patchNumber].fader4);
+    setTriggeringS(patches[patchNumber].triggeringS);
+  }, [patches, patchNumber]);
 
   return (
     <div className="absolute">

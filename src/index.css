@@ -61,23 +61,3 @@ button {
 .absolute {
   position: absolute;
 }
-
-.testH {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: red;
-  height: 1px;
-  width: 136.5rem;
-  transform: translate(0rem, 11.4rem);
-}
-
-.testV {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: red;
-  height: 80.25rem;
-  width: 1px;
-  transform: translate(35.1rem, 0rem);
-}

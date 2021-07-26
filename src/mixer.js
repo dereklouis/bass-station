@@ -5,20 +5,20 @@ import KnobBorder from './knobBorder';
 import SwitchABC from './switchABC';
 
 const Mixer = (props) => {
-  const { patch } = props;
-  const [oSC1Knob, setOSC1Knob] = useState(patch.mixerOsc1K);
-  const [oSC2Knob, setOSC2Knob] = useState(patch.mixerOsc2K);
-  const [eRNS, setERNS] = useState(patch.mixerUtilityS);
-  const [subOscKnob, setSubOscKnob] = useState(patch.mixerSubK);
-  const [eRNKnob, setERNKnob] = useState(patch.mixerUtilityK);
+  const { patches, patchNumber } = props;
+  const [oSC1Knob, setOSC1Knob] = useState(patches[patchNumber].mixerOsc1K);
+  const [oSC2Knob, setOSC2Knob] = useState(patches[patchNumber].mixerOsc2K);
+  const [eRNS, setERNS] = useState(patches[patchNumber].mixerUtilityS);
+  const [subOscKnob, setSubOscKnob] = useState(patches[patchNumber].mixerSubK);
+  const [eRNKnob, setERNKnob] = useState(patches[patchNumber].mixerUtilityK);
 
   useEffect(() => {
-    setOSC1Knob(patch.mixerOsc1K);
-    setOSC2Knob(patch.mixerOsc2K);
-    setERNS(patch.mixerUtilityS);
-    setSubOscKnob(patch.mixerSubK);
-    setERNKnob(patch.mixerUtilityK);
-  }, [patch]);
+    setOSC1Knob(patches[patchNumber].mixerOsc1K);
+    setOSC2Knob(patches[patchNumber].mixerOsc2K);
+    setERNS(patches[patchNumber].mixerUtilityS);
+    setSubOscKnob(patches[patchNumber].mixerSubK);
+    setERNKnob(patches[patchNumber].mixerUtilityK);
+  }, [patches, patchNumber]);
 
   return (
     <div className="absolute">

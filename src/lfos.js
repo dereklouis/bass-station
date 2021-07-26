@@ -6,20 +6,20 @@ import Bulb from './bulb';
 import SwitchAB from './switchAB';
 
 const LFOS = (props) => {
-  const { patch } = props;
-  const [lFO1Wave, setLFO1Wave] = useState(patch.lFO1Wave);
-  const [lFO1Knob, setLFO1Knob] = useState(patch.lfosLFO1K);
-  const [lFO2Knob, setLFO2Knob] = useState(patch.lfosLFO2K);
-  const [lFO2Wave, setLFO2Wave] = useState(patch.lFO2Wave);
-  const [speedS, setSpeedS] = useState(patch.speedDelayS);
+  const { patches, patchNumber } = props;
+  const [lFO1Wave, setLFO1Wave] = useState(patches[patchNumber].lFO1Wave);
+  const [lFO1Knob, setLFO1Knob] = useState(patches[patchNumber].lfosLFO1K);
+  const [lFO2Knob, setLFO2Knob] = useState(patches[patchNumber].lfosLFO2K);
+  const [lFO2Wave, setLFO2Wave] = useState(patches[patchNumber].lFO2Wave);
+  const [speedS, setSpeedS] = useState(patches[patchNumber].speedDelayS);
 
   useEffect(() => {
-    setLFO1Wave(patch.lFO1Wave);
-    setLFO1Knob(patch.lfosLFO1K);
-    setLFO2Knob(patch.lfosLFO2K);
-    setLFO2Wave(patch.lFO2Wave);
-    setSpeedS(patch.speedDelayS);
-  }, [patch]);
+    setLFO1Wave(patches[patchNumber].lFO1Wave);
+    setLFO1Knob(patches[patchNumber].lfosLFO1K);
+    setLFO2Knob(patches[patchNumber].lfosLFO2K);
+    setLFO2Wave(patches[patchNumber].lFO2Wave);
+    setSpeedS(patches[patchNumber].speedDelayS);
+  }, [patches, patchNumber]);
 
   const convertBPM = (position) => {
     return (60 / ((position + 150) * 0.666 + 40)) * 500;

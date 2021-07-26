@@ -9,26 +9,42 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Filters = (props) => {
-  const { patch } = props;
-  const [filtersTypeS, setFiltersTypeS] = useState(patch.filtersTypeS);
-  const [overdriveKnob, setOverdriveKnob] = useState(patch.overdriveK);
-  const [resonanceKnob, setResonanceKnob] = useState(patch.resonanceK);
-  const [filtersSlopeS, setFiltersSlopeS] = useState(patch.filtersSlopeS);
-  const [frequencyKnob, setFrequencyKnob] = useState(patch.frequencyK);
-  const [filtersShapeS, setFiltersShapeS] = useState(patch.filtersShapeS);
-  const [filterMEDKnob, setFilterMEDKnob] = useState(patch.filtersMEDK);
-  const [filterLFOKnob, setFilterLFOKnob] = useState(patch.filtersLFO2K);
+  const { patches, patchNumber } = props;
+  const [filtersTypeS, setFiltersTypeS] = useState(
+    patches[patchNumber].filtersTypeS
+  );
+  const [overdriveKnob, setOverdriveKnob] = useState(
+    patches[patchNumber].overdriveK
+  );
+  const [resonanceKnob, setResonanceKnob] = useState(
+    patches[patchNumber].resonanceK
+  );
+  const [filtersSlopeS, setFiltersSlopeS] = useState(
+    patches[patchNumber].filtersSlopeS
+  );
+  const [frequencyKnob, setFrequencyKnob] = useState(
+    patches[patchNumber].frequencyK
+  );
+  const [filtersShapeS, setFiltersShapeS] = useState(
+    patches[patchNumber].filtersShapeS
+  );
+  const [filterMEDKnob, setFilterMEDKnob] = useState(
+    patches[patchNumber].filtersMEDK
+  );
+  const [filterLFOKnob, setFilterLFOKnob] = useState(
+    patches[patchNumber].filtersLFO2K
+  );
 
   useEffect(() => {
-    setFiltersTypeS(patch.filtersTypeS);
-    setOverdriveKnob(patch.overdriveK);
-    setResonanceKnob(patch.resonanceK);
-    setFiltersSlopeS(patch.filtersSlopeS);
-    setFrequencyKnob(patch.frequencyK);
-    setFiltersShapeS(patch.filtersShapeS);
-    setFilterMEDKnob(patch.filtersMEDK);
-    setFilterLFOKnob(patch.filtersLFO2K);
-  }, [patch]);
+    setFiltersTypeS(patches[patchNumber].filtersTypeS);
+    setOverdriveKnob(patches[patchNumber].overdriveK);
+    setResonanceKnob(patches[patchNumber].resonanceK);
+    setFiltersSlopeS(patches[patchNumber].filtersSlopeS);
+    setFrequencyKnob(patches[patchNumber].frequencyK);
+    setFiltersShapeS(patches[patchNumber].filtersShapeS);
+    setFilterMEDKnob(patches[patchNumber].filtersMEDK);
+    setFilterLFOKnob(patches[patchNumber].filtersLFO2K);
+  }, [patches, patchNumber]);
 
   return (
     <div className="absolute">

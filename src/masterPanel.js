@@ -1,12 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import './styles/masterPanel.css';
 
 const MasterPanel = (props) => {
-  const { patchNumber, setPatchNumber, patch } = props;
+  const { patchNumber, setPatchNumber, patches } = props;
 
-  const [volumeKnob, setVolumeKnob] = useState(patch.volumeK);
+  const [volumeKnob, setVolumeKnob] = useState(patches[patchNumber].volumeK);
+
+  useEffect(() => {
+    setVolumeKnob(patches[patchNumber].volumeK);
+  }, [patches, patchNumber]);
+
+  const save = () => {
+    console.log('Save');
+  };
+
   return (
     <div className="absolute">
       <div id="screen">
@@ -48,7 +57,7 @@ const MasterPanel = (props) => {
       <p id="patchL" className="buttonLabel">
         Patch
       </p>
-      <div id="saveB" className="button">
+      <div id="saveB" className="button" onClick={save}>
         <p id="saveBL" className="buttonLabel" style={{ cursor: 'pointer' }}>
           Save
         </p>
