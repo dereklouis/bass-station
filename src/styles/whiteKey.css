@@ -3,6 +3,7 @@
   height: 41.1rem;
   background-color: #f4f4f4;
   cursor: pointer;
+  border-radius: 0 0 0.2rem 0.2rem;
 }
 
 .whiteKey:active {

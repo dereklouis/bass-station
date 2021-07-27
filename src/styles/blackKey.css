@@ -10,10 +10,69 @@
   box-shadow: 0rem 0rem 1rem rgb(0, 0, 0);
   cursor: pointer;
   transform: translateY(0.75rem);
+  border-radius: 0 0 0.2rem 0.2rem;
 }
 
 .blackKeyMaster:active {
   box-shadow: 0rem 0rem 0.7rem rgb(0, 0, 0);
+}
+
+.backKeyMasterInsetShadow {
+  position: absolute;
+  width: 3rem;
+  height: 22.5rem;
+  border-radius: 0.2rem;
+  transform: translateY(-1.5rem);
+  background: linear-gradient(
+      180deg,
+      #0d121c,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      #0d121c
+    ),
+    linear-gradient(
+      90deg,
+      #3e4a63,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    );
+}
+
+.backKeyMasterInsetShadowActive {
+  position: absolute;
+  width: 3rem;
+  height: 22.5rem;
+  border-radius: 0.2rem;
+  transform: translateY(-1.5rem);
+  background: linear-gradient(
+      180deg,
+      #0d121c,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      #0d121c
+    ),
+    linear-gradient(
+      90deg,
+      #343d4f,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    );
 }
 
 .blackKey {
@@ -37,7 +96,6 @@
   width: 2.7rem;
   height: 3.1rem;
   background: linear-gradient(180deg, #0d121c, #3e4a63, #2e3443, #000);
-  box-shadow: 0rem 0rem 0.5rem #202839;
   border-radius: 0rem 0rem 0.2rem 0.2rem;
 }
 
@@ -45,7 +103,6 @@
   width: 2.7rem;
   height: 3.1rem;
   background: linear-gradient(180deg, #0d121c, #2b313f, #2b313f, #000);
-  box-shadow: 0rem 0rem 0.5rem #202839;
   border-radius: 0rem 0rem 0.2rem 0.2rem;
 }
 
