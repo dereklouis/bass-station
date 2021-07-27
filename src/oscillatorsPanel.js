@@ -144,8 +144,10 @@ const Oscillators = (props) => {
         onClick={() => {
           if (rangeSelection < 4) {
             setRangeSelection(rangeSelection + 1);
+            stagingPatch.current.rangeB = rangeSelection + 1;
           } else {
             setRangeSelection(1);
+            stagingPatch.current.rangeB = 1;
           }
         }}
       />
@@ -185,8 +187,10 @@ const Oscillators = (props) => {
         onClick={() => {
           if (waveformSelection < 4) {
             setwaveformSelection(waveformSelection + 1);
+            stagingPatch.current.waveformB = waveformSelection + 1;
           } else {
             setwaveformSelection(1);
+            stagingPatch.current.waveformB = 1;
           }
         }}
       />

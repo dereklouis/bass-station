@@ -33,8 +33,10 @@ const LFOS = (props) => {
         onClick={() => {
           if (lFO1Wave < 4) {
             setLFO1Wave(lFO1Wave + 1);
+            stagingPatch.current.lFO1Wave = lFO1Wave + 1;
           } else {
             setLFO1Wave(1);
+            stagingPatch.current.lFO1Wave = 1;
           }
         }}
       />
@@ -149,8 +151,10 @@ const LFOS = (props) => {
         onClick={() => {
           if (lFO2Wave < 4) {
             setLFO2Wave(lFO2Wave + 1);
+            stagingPatch.current.lFO2Wave = lFO2Wave + 1;
           } else {
             setLFO2Wave(1);
+            stagingPatch.current.lFO2Wave = 1;
           }
         }}
       />

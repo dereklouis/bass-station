@@ -68,6 +68,7 @@ const Arpeggiator = (props) => {
         className="button"
         onClick={() => {
           setLegatoStatus(!legatoStatus);
+          stagingPatch.current.arpLegatoBulb = !legatoStatus;
         }}
       >
         <p id="arpOnL">On</p>
@@ -80,6 +81,7 @@ const Arpeggiator = (props) => {
         className="button"
         onClick={() => {
           setLatchStatus(!latchStatus);
+          stagingPatch.current.arpLatchBulb = !latchStatus;
         }}
       >
         <p id="arpLatchL">Latch</p>
