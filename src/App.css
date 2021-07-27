@@ -133,6 +133,6 @@
   height: 80.25rem;
   right: 0;
   background: linear-gradient(90deg, rgb(20, 20, 20), rgb(45, 45, 45), black);
-  border-radius: 0.5rem 0rem 0rem 0.5rem;
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
   width: 4.5rem;
 }
