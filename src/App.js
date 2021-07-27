@@ -67,7 +67,11 @@ function App() {
           patchNumber={patchNumber}
           stagingPatch={stagingPatch}
         />
-        <Envelopes patches={patches} patchNumber={patchNumber} />
+        <Envelopes
+          patches={patches}
+          patchNumber={patchNumber}
+          stagingPatch={stagingPatch}
+        />
         <Effects
           patches={patches}
           patchNumber={patchNumber}

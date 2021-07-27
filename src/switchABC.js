@@ -1,6 +1,7 @@
 import './styles/switchABC.css';
 
 const SwitchABC = (props) => {
+  const { orientation, position, setPosition, setting, stagingPatch } = props;
   const key = {
     A: 'switchABCKnobPosA',
     B: 'switchABCKnobPosB',
@@ -11,7 +12,7 @@ const SwitchABC = (props) => {
 
   const switchMouseDown = (e) => {
     e.preventDefault();
-    if (props.orientation === 'Vertical') {
+    if (orientation === 'Vertical') {
       mouseStartingPos = e.clientY;
     } else {
       mouseStartingPos = e.clientX;
@@ -21,29 +22,37 @@ const SwitchABC = (props) => {
   const switchMouseLeave = (e) => {
     e.preventDefault();
     if (mouseStartingPos !== null) {
-      if (props.orientation === 'Vertical') {
+      if (orientation === 'Vertical') {
         if (e.clientY > mouseStartingPos) {
-          if (props.position === 'A') {
-            props.setPosition('B');
-          } else if (props.position === 'B') {
-            props.setPosition('C');
+          if (position === 'A') {
+            setPosition('B');
+            stagingPatch.current[setting] = 'B';
+          } else if (position === 'B') {
+            setPosition('C');
+            stagingPatch.current[setting] = 'C';
           }
-        } else if (props.position === 'C') {
-          props.setPosition('B');
+        } else if (position === 'C') {
+          setPosition('B');
+          stagingPatch.current[setting] = 'B';
         } else {
-          props.setPosition('A');
+          setPosition('A');
+          stagingPatch.current[setting] = 'A';
         }
       } else {
         if (e.clientX > mouseStartingPos) {
-          if (props.position === 'A') {
-            props.setPosition('B');
-          } else if (props.position === 'B') {
-            props.setPosition('C');
+          if (position === 'A') {
+            setPosition('B');
+            stagingPatch.current[setting] = 'B';
+          } else if (position === 'B') {
+            setPosition('C');
+            stagingPatch.current[setting] = 'C';
           }
-        } else if (props.position === 'C') {
-          props.setPosition('B');
+        } else if (position === 'C') {
+          setPosition('B');
+          stagingPatch.current[setting] = 'B';
         } else {
-          props.setPosition('A');
+          setPosition('A');
+          stagingPatch.current[setting] = 'A';
         }
       }
     }
@@ -55,7 +64,7 @@ const SwitchABC = (props) => {
       <div className="switchABCRounder">
         <div className="swtchABCTrack">
           <div
-            className={`switchABCKnob ${key[props.position]}`}
+            className={`switchABCKnob ${key[position]}`}
             onMouseDown={switchMouseDown}
             onMouseLeave={switchMouseLeave}
           />

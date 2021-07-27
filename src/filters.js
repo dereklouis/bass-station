@@ -53,6 +53,8 @@ const Filters = (props) => {
           orientation={'Horizontal'}
           position={filtersTypeS}
           setPosition={setFiltersTypeS}
+          setting={'filtersTypeS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="filtersTypeL" className="subLabelLarge">
@@ -75,6 +77,8 @@ const Filters = (props) => {
           orientation={'Horizontal'}
           position={filtersSlopeS}
           setPosition={setFiltersSlopeS}
+          setting={'filtersSlopeS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="filtersSlopeL" className="subLabelLarge">
@@ -97,6 +101,8 @@ const Filters = (props) => {
           orientation={'Horizontal'}
           position={filtersShapeS}
           setPosition={setFiltersShapeS}
+          setting={'filtersShapeS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="filtersShapeL" className="subLabelLarge">

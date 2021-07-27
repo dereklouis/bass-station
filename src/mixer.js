@@ -82,6 +82,8 @@ const Mixer = (props) => {
           orientation={'Vertical'}
           position={eRNS}
           setPosition={setERNS}
+          setting={'mixerUtilityS'}
+          stagingPatch={stagingPatch}
         />
       </div>
     </div>

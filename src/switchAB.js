@@ -1,6 +1,7 @@
 import './styles/switchAB.css';
 
 const SwitchAB = (props) => {
+  const { orientation, position, setPosition, setting, stagingPatch } = props;
   const key = {
     A: 'switchABKnobPosA',
     B: 'switchABKnobPosB',
@@ -10,7 +11,7 @@ const SwitchAB = (props) => {
 
   const switchMouseDown = (e) => {
     e.preventDefault();
-    if (props.orientation === 'Vertical') {
+    if (orientation === 'Vertical') {
       mouseStartingPos = e.clientY;
     } else {
       mouseStartingPos = e.clientX;
@@ -20,17 +21,21 @@ const SwitchAB = (props) => {
   const switchMouseLeave = (e) => {
     e.preventDefault();
     if (mouseStartingPos !== null) {
-      if (props.orientation === 'Vertical') {
+      if (orientation === 'Vertical') {
         if (e.clientY > mouseStartingPos) {
-          props.setPosition('B');
+          setPosition('B');
+          stagingPatch.current[setting] = 'B';
         } else {
-          props.setPosition('A');
+          setPosition('A');
+          stagingPatch.current[setting] = 'A';
         }
       } else {
         if (e.clientX > mouseStartingPos) {
-          props.setPosition('B');
+          setPosition('B');
+          stagingPatch.current[setting] = 'B';
         } else {
-          props.setPosition('A');
+          setPosition('A');
+          stagingPatch.current[setting] = 'A';
         }
       }
     }
@@ -42,7 +47,7 @@ const SwitchAB = (props) => {
       <div className="switchABRounder">
         <div className="swtchABTrack">
           <div
-            className={`switchABKnob ${key[props.position]}`}
+            className={`switchABKnob ${key[position]}`}
             onMouseDown={switchMouseDown}
             onMouseLeave={switchMouseLeave}
           />

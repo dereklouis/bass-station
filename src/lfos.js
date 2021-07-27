@@ -94,6 +94,8 @@ const LFOS = (props) => {
           position={speedS}
           setPosition={setSpeedS}
           orientation={'Vertical'}
+          setting={'speedDelayS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <div id="lfosLFO2K" className="knobDiv">

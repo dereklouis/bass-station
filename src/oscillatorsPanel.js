@@ -208,6 +208,8 @@ const Oscillators = (props) => {
           orientation={'Horizontal'}
           position={oscSelectS}
           setPosition={setOscSelectS}
+          setting={'oscSelectS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="sync12L" className="subLabelLarge">
@@ -231,6 +233,8 @@ const Oscillators = (props) => {
           orientation="Horizontal"
           position={mMLS}
           setPosition={setMMLS}
+          setting={'pulseWidthS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="sync12OnL" className="subLabelLarge">
@@ -246,6 +250,8 @@ const Oscillators = (props) => {
           orientation={'Vertical'}
           position={octaveSelectS}
           setPosition={setOctaveSelectS}
+          setting={'subOscOctaveS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <div id="subOscWaveS">
@@ -253,6 +259,8 @@ const Oscillators = (props) => {
           orientation={'Vertical'}
           position={subOscWaveS}
           setPosition={setSubOscWaveS}
+          setting={'subOscWaveS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="subOscOctaveL" className="subLabelLarge">

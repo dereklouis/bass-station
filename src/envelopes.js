@@ -5,7 +5,7 @@ import Fader from './fader';
 import Bulb from './bulb';
 
 const Envelopes = (props) => {
-  const { patches, patchNumber } = props;
+  const { patches, patchNumber, stagingPatch } = props;
   const [eSS, setESS] = useState(patches[patchNumber].envSelectS);
   const [attackFader, setAttackFader] = useState(patches[patchNumber].fader1);
   const [decayFader, setDecayFader] = useState(patches[patchNumber].fader2);
@@ -31,6 +31,8 @@ const Envelopes = (props) => {
           orientation={'Vertical'}
           position={eSS}
           setPosition={setESS}
+          setting={'envSelectS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="envSelectL" className="subLabelLarge">
@@ -75,6 +77,8 @@ const Envelopes = (props) => {
           orientation={'Vertical'}
           position={triggeringS}
           setPosition={setTriggeringS}
+          setting={'triggeringS'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="triggeringL" className="subLabelLarge">
