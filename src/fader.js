@@ -16,6 +16,7 @@ const Fader = (props) => {
 
   const activateFaderAdjust = (e) => {
     e.preventDefault();
+    restingPlace.current = position;
     faderAdjustActive.current = true;
     clientStart.current = e.clientY;
     faderMaster.current.style.cursor = 'grabbing';
