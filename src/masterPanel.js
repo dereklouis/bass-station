@@ -4,7 +4,8 @@ import KnobBorder from './knobBorder';
 import './styles/masterPanel.css';
 
 const MasterPanel = (props) => {
-  const { patchNumber, setPatchNumber, patches } = props;
+  const { patchNumber, setPatchNumber, stagingPatch, setPatches, patches } =
+    props;
 
   const [volumeKnob, setVolumeKnob] = useState(patches[patchNumber].volumeK);
 
@@ -13,7 +14,10 @@ const MasterPanel = (props) => {
   }, [patches, patchNumber]);
 
   const save = () => {
-    console.log('Save');
+    const newPatch = stagingPatch.current;
+    const newPatches = { ...patches };
+    newPatches[patchNumber] = newPatch;
+    setPatches(newPatches);
   };
 
   return (
@@ -44,7 +48,12 @@ const MasterPanel = (props) => {
       </div>
       <div id="volumeK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={volumeKnob} setRotation={setVolumeKnob} />
+        <Knob
+          rotation={volumeKnob}
+          setRotation={setVolumeKnob}
+          setting={'volumeK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="volumeKL" className="knobLabel">
           Volume
         </p>
@@ -67,6 +76,9 @@ const MasterPanel = (props) => {
         className="button"
         onClick={() => {
           if (patchNumber > 0) {
+            const patchRef = patches[patchNumber - 1];
+            const patchClone = { ...patchRef };
+            stagingPatch.current = patchClone;
             setPatchNumber(patchNumber - 1);
           }
         }}
@@ -78,6 +90,9 @@ const MasterPanel = (props) => {
         className="button"
         onClick={() => {
           if (patchNumber < 127) {
+            const patchRef = patches[patchNumber + 1];
+            const patchClone = { ...patchRef };
+            stagingPatch.current = patchClone;
             setPatchNumber(patchNumber + 1);
           }
         }}

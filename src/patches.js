@@ -1,6 +1,6 @@
 // fader positions: -4.55 - +4.45
 
-const Patches = {
+export const defaultPatches = {
   0: {
     volumeK: 0,
     coarseK: -150,
@@ -285,10 +285,56 @@ const Patches = {
   },
 };
 
-const patchClone = { ...Patches[0] };
+const patchCopy = {
+  volumeK: 0,
+  coarseK: -150,
+  fineK: 0,
+  MEDK: 0,
+  LFO1K: 0,
+  pulseWidthK: 0,
+  rangeB: 2,
+  waveformB: 3,
+  oscSelectS: 'A',
+  pulseWidthS: 'B',
+  subOscOctaveS: 'A',
+  subOscWaveS: 'C',
+  mixerOsc1K: 150,
+  mixerOsc2K: -150,
+  mixerUtilityS: 'A',
+  mixerSubK: 120,
+  mixerUtilityK: -150,
+  filtersTypeS: 'A',
+  overdriveK: -150,
+  resonanceK: -150,
+  filtersSlopeS: 'B',
+  frequencyK: -115,
+  filtersShapeS: 'A',
+  filtersMEDK: 75,
+  filtersLFO2K: 0,
+  tempoK: 0,
+  rhythmK: 110,
+  rhythm2K: 30,
+  arpLegatoBulb: false,
+  arpLatchBulb: false,
+  arpOctavesK: -90,
+  glideTimeK: -150,
+  lFO1Wave: 1,
+  lfosLFO1K: -70,
+  lfosLFO2K: -35,
+  lFO2Wave: 1,
+  speedDelayS: 'B',
+  envSelectS: 'B',
+  fader1: 4,
+  fader2: 3,
+  fader3: -1,
+  fader4: 4.45,
+  triggeringS: 'A',
+  distortionK: -150,
+  oFMK: -150,
+};
 
-while (Object.keys(Patches).length < 128) {
-  Patches[Object.keys(Patches).length] = patchClone;
+while (Object.keys(defaultPatches).length < 128) {
+  defaultPatches[Object.keys(defaultPatches).length] = patchCopy;
 }
 
-export default Patches;
+export const patchTemplate = { ...patchCopy };

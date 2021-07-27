@@ -7,7 +7,7 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Oscillators = (props) => {
-  const { patches, patchNumber } = props;
+  const { patches, patchNumber, stagingPatch } = props;
   const [coarseKnob, setCoarseKnob] = useState(patches[patchNumber].coarseK);
   const [fineKnob, setFineKnob] = useState(patches[patchNumber].fineK);
   const [mEDKnob, setMEDKnob] = useState(patches[patchNumber].MEDK);
@@ -48,35 +48,60 @@ const Oscillators = (props) => {
     <div className="absolute">
       <div id="coarseK" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob rotation={coarseKnob} setRotation={setCoarseKnob} />
+        <Knob
+          rotation={coarseKnob}
+          setRotation={setCoarseKnob}
+          setting={'coarseK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="coarseKL" className="knobLabel">
           Coarse
         </p>
       </div>
       <div id="fineK" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob rotation={fineKnob} setRotation={setFineKnob} />
+        <Knob
+          rotation={fineKnob}
+          setRotation={setFineKnob}
+          setting={'fineK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="fineKL" className="knobLabel">
           Fine
         </p>
       </div>
       <div id="MEDK" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob rotation={mEDKnob} setRotation={setMEDKnob} />
+        <Knob
+          rotation={mEDKnob}
+          setRotation={setMEDKnob}
+          setting={'MEDK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="MEDKL" className="knobLabel">
           Mod Env depth
         </p>
       </div>
       <div id="LFO1K" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob rotation={oSCLFO1Knob} setRotation={setOSCLFO1Knob} />
+        <Knob
+          rotation={oSCLFO1Knob}
+          setRotation={setOSCLFO1Knob}
+          setting={'LFO1K'}
+          stagingPatch={stagingPatch}
+        />
         <p id="LFO1KL" className="knobLabel">
           LFO 1 depth
         </p>
       </div>
       <div id="pulseWidthK" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob rotation={pulseWidthKnob} setRotation={setPulseWidthKnob} />
+        <Knob
+          rotation={pulseWidthKnob}
+          setRotation={setPulseWidthKnob}
+          setting={'pulseWidthK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="pulseWidthKL" className="knobLabel">
           Pulse Width
         </p>

@@ -1,4 +1,4 @@
-export const knobSpin = (e, rotation, setRotation) => {
+export const knobSpin = (e, rotation, setRotation, setting, stagingPatch) => {
   let clientStart = null;
 
   clientStart = e.clientX;
@@ -13,6 +13,7 @@ export const knobSpin = (e, rotation, setRotation) => {
       moveDifference >= -150
     ) {
       setRotation(moveDifference);
+      stagingPatch.current[setting] = moveDifference;
     }
   });
   document.addEventListener('mouseup', function () {
@@ -21,7 +22,14 @@ export const knobSpin = (e, rotation, setRotation) => {
   });
 };
 
-export const knobSpinNotch = (e, rotation, setRotation, notches) => {
+export const knobSpinNotch = (
+  e,
+  rotation,
+  setRotation,
+  notches,
+  setting,
+  stagingPatch
+) => {
   const notchKey = {
     4: 15,
     8: 135,
@@ -41,6 +49,7 @@ export const knobSpinNotch = (e, rotation, setRotation, notches) => {
     ) {
       let notchedMovement = Math.floor(moveDifference / 30) * 30;
       setRotation(notchedMovement);
+      stagingPatch.current[setting] = notchedMovement;
     }
   });
   document.addEventListener('mouseup', function () {

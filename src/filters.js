@@ -9,7 +9,7 @@ import SwitchAB from './switchAB';
 import SwitchABC from './switchABC';
 
 const Filters = (props) => {
-  const { patches, patchNumber } = props;
+  const { patches, patchNumber, stagingPatch } = props;
   const [filtersTypeS, setFiltersTypeS] = useState(
     patches[patchNumber].filtersTypeS
   );
@@ -126,28 +126,48 @@ const Filters = (props) => {
       <div id="filtersBulbsArm4" />
       <div id="overdriveK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={overdriveKnob} setRotation={setOverdriveKnob} />
+        <Knob
+          rotation={overdriveKnob}
+          setRotation={setOverdriveKnob}
+          setting={'overdriveK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="overdriveKL" className="knobLabel">
           Overdrive
         </p>
       </div>
       <div id="resonanceK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={resonanceKnob} setRotation={setResonanceKnob} />
+        <Knob
+          rotation={resonanceKnob}
+          setRotation={setResonanceKnob}
+          setting={'resonanceK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="resonanceKL" className="knobLabel">
           Resonance
         </p>
       </div>
       <div id="filtersMEDK" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob rotation={filterMEDKnob} setRotation={setFilterMEDKnob} />
+        <Knob
+          rotation={filterMEDKnob}
+          setRotation={setFilterMEDKnob}
+          setting={'filtersMEDK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="filtersMEDKL" className="knobLabel">
           Mod Env depth
         </p>
       </div>
       <div id="filtersLFO2K" className="knobDiv">
         <KnobBorder highNoon={true} />
-        <Knob rotation={filterLFOKnob} setRotation={setFilterLFOKnob} />
+        <Knob
+          rotation={filterLFOKnob}
+          setRotation={setFilterLFOKnob}
+          setting={'filtersLFO2K'}
+          stagingPatch={stagingPatch}
+        />
         <p id="filtersLFO2KL" className="knobLabel">
           LFO 2 depth
         </p>
@@ -158,7 +178,12 @@ const Filters = (props) => {
       <div id="filtersLineTwo" />
       <div id="frequencyK" className="knobDiv">
         <KnobBigBorder />
-        <KnobBig rotation={frequencyKnob} setRotation={setFrequencyKnob} />
+        <KnobBig
+          rotation={frequencyKnob}
+          setRotation={setFrequencyKnob}
+          setting={'frequencyK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="filtersFrequencyKL" className="knobLabel">
           Frequency
         </p>

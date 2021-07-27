@@ -6,7 +6,7 @@ import Bulb from './bulb';
 import SwitchAB from './switchAB';
 
 const LFOS = (props) => {
-  const { patches, patchNumber } = props;
+  const { patches, patchNumber, stagingPatch } = props;
   const [lFO1Wave, setLFO1Wave] = useState(patches[patchNumber].lFO1Wave);
   const [lFO1Knob, setLFO1Knob] = useState(patches[patchNumber].lfosLFO1K);
   const [lFO2Knob, setLFO2Knob] = useState(patches[patchNumber].lfosLFO2K);
@@ -80,7 +80,12 @@ const LFOS = (props) => {
       </p>
       <div id="lfosLFO1K" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={lFO1Knob} setRotation={setLFO1Knob} />
+        <Knob
+          rotation={lFO1Knob}
+          setRotation={setLFO1Knob}
+          setting={'lfosLFO1K'}
+          stagingPatch={stagingPatch}
+        />
       </div>
       <div id="speedDelayS">
         <SwitchAB
@@ -91,7 +96,12 @@ const LFOS = (props) => {
       </div>
       <div id="lfosLFO2K" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={lFO2Knob} setRotation={setLFO2Knob} />
+        <Knob
+          rotation={lFO2Knob}
+          setRotation={setLFO2Knob}
+          setting={'lfosLFO2K'}
+          stagingPatch={stagingPatch}
+        />
       </div>
       <p id="lfosRightTriL" className="subLabelSmall">
         V

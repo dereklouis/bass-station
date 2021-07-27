@@ -4,7 +4,7 @@ import Knob from './knob';
 import KnobBorder from './knobBorder';
 
 const Porta = (props) => {
-  const { patches, patchNumber } = props;
+  const { patches, patchNumber, stagingPatch } = props;
   const [glideTimeKnob, setGlideTimeKnob] = useState(
     patches[patchNumber].glideTimeK
   );
@@ -17,7 +17,12 @@ const Porta = (props) => {
     <div className="absolute">
       <div id="glideTimeK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={glideTimeKnob} setRotation={setGlideTimeKnob} />
+        <Knob
+          rotation={glideTimeKnob}
+          setRotation={setGlideTimeKnob}
+          setting={'glideTimeK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="glideTimeKL" className="knobLabel">
           Glide Time
         </p>

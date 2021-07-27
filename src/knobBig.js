@@ -8,24 +8,25 @@ for (let i = 0; i < 40; i++) {
 }
 
 const KnobBig = (props) => {
-  let knobRotation = props.rotation;
+  const { rotation, setRotation, setting, stagingPatch } = props;
+
   let shadowRotation = 0;
-  if (knobRotation > 0) {
-    shadowRotation = -Math.abs(knobRotation);
+  if (rotation > 0) {
+    shadowRotation = -Math.abs(rotation);
   } else {
-    shadowRotation = Math.abs(knobRotation);
+    shadowRotation = Math.abs(rotation);
   }
 
   const activateKnobAdjust = (e) => {
     e.preventDefault();
-    knobSpin(e, props.rotation, props.setRotation);
+    knobSpin(e, rotation, setRotation, setting, stagingPatch);
   };
 
   return (
     <div
       className="knobBigMaster"
       onMouseDown={activateKnobAdjust}
-      style={{ transform: `rotate(${knobRotation}deg)` }}
+      style={{ transform: `rotate(${rotation}deg)` }}
     >
       <div
         className="knobBigMasterShadow"

@@ -5,7 +5,7 @@ import KnobBorder from './knobBorder';
 import Bulb from './bulb';
 
 const Arpeggiator = (props) => {
-  const { patches, patchNumber } = props;
+  const { patches, patchNumber, stagingPatch } = props;
   const [tempoKnob, setTempoKnob] = useState(patches[patchNumber].tempoK);
   const [rhythmKnob, setRhythmKnob] = useState(patches[patchNumber].rhythmK);
   const [directionKnob, setDirectionKnob] = useState(
@@ -36,7 +36,12 @@ const Arpeggiator = (props) => {
     <div className="absolute">
       <div id="tempoK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={tempoKnob} setRotation={setTempoKnob} />
+        <Knob
+          rotation={tempoKnob}
+          setRotation={setTempoKnob}
+          setting={'tempoK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="tempoKL" className="knobLabel">
           Tempo
         </p>
@@ -87,7 +92,12 @@ const Arpeggiator = (props) => {
       </div>
       <div id="rhythmK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={rhythmKnob} setRotation={setRhythmKnob} />
+        <Knob
+          rotation={rhythmKnob}
+          setRotation={setRhythmKnob}
+          setting={'rhythmK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="rhythmKL" className="knobLabel">
           Rhythm
         </p>
@@ -104,6 +114,8 @@ const Arpeggiator = (props) => {
           rotation={directionKnob}
           setRotation={setDirectionKnob}
           notch={8}
+          setting={'rhythm2K'}
+          stagingPatch={stagingPatch}
         />
       </div>
       <p id="arpUpL" className="subLabelLarge">
@@ -132,7 +144,13 @@ const Arpeggiator = (props) => {
       </p>
       <div id="arpOctavesK" className="knobDiv">
         <KnobBorder highNoon={false} remove={[1, 2, 3, 4, 5, 6, 7, 8]} />
-        <Knob rotation={aOSKnob} setRotation={setAOSKnob} notch={4} />
+        <Knob
+          rotation={aOSKnob}
+          setRotation={setAOSKnob}
+          notch={4}
+          setting={'arpOctavesK'}
+          stagingPatch={stagingPatch}
+        />
       </div>
       <p id="AO1L" className="subLabelLarge">
         1

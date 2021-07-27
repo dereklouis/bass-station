@@ -4,7 +4,7 @@ import Knob from './knob';
 import KnobBorder from './knobBorder';
 
 const Effects = (props) => {
-  const { patches, patchNumber } = props;
+  const { patches, patchNumber, stagingPatch } = props;
   const [distortionKnob, setDistortionKnob] = useState(
     patches[patchNumber].distortionK
   );
@@ -19,14 +19,24 @@ const Effects = (props) => {
     <div className="absolute">
       <div id="distortionK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={distortionKnob} setRotation={setDistortionKnob} />
+        <Knob
+          rotation={distortionKnob}
+          setRotation={setDistortionKnob}
+          setting={'distortionK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="distortionKL" className="knobLabel">
           Distortion
         </p>
       </div>
       <div id="oFMK" className="knobDiv">
         <KnobBorder highNoon={false} />
-        <Knob rotation={oFMKnob} setRotation={setOFMKnob} />
+        <Knob
+          rotation={oFMKnob}
+          setRotation={setOFMKnob}
+          setting={'oFMK'}
+          stagingPatch={stagingPatch}
+        />
         <p id="oFMKL" className="knobLabel">
           Osc Filter Mod
         </p>
