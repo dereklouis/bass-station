@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import './styles/masterPanel.css';
@@ -8,16 +8,34 @@ const MasterPanel = (props) => {
     props;
 
   const [volumeKnob, setVolumeKnob] = useState(patches[patchNumber].volumeK);
+  const [savePending, setSavePending] = useState(false);
+
+  const screenNumber1 = useRef(null);
+  const screenNumber2 = useRef(null);
+  const screenNumber3 = useRef(null);
 
   useEffect(() => {
     setVolumeKnob(patches[patchNumber].volumeK);
   }, [patches, patchNumber]);
 
+  document.addEventListener('click', function (e) {
+    if (savePending) {
+      if (e.target.id !== 'saveBL' && e.target.id !== 'saveB') {
+        setSavePending(false);
+      }
+    }
+  });
+
   const save = () => {
-    const newPatch = stagingPatch.current;
-    const newPatches = { ...patches };
-    newPatches[patchNumber] = newPatch;
-    setPatches(newPatches);
+    if (!savePending) {
+      setSavePending(!savePending);
+    } else {
+      const newPatch = stagingPatch.current;
+      const newPatches = { ...patches };
+      newPatches[patchNumber] = newPatch;
+      setPatches(newPatches);
+      setSavePending(!savePending);
+    }
   };
 
   return (
@@ -26,18 +44,31 @@ const MasterPanel = (props) => {
         <div id="numberWindow">
           <p id="screenNumbersBack">888</p>
         </div>
+        {savePending && <div id="savingDot" />}
         <div id="redPositioner1" className="redPositioner">
-          <p id="screenNumber1" className="screenNumber">
+          <p
+            id="screenNumber1"
+            className={`screenNumber ${savePending && 'savePending'}`}
+            ref={screenNumber1}
+          >
             {Math.floor(patchNumber % 10)}
           </p>
         </div>
         <div id="redPositioner2" className="redPositioner">
-          <p id="screenNumber2" className="screenNumber">
+          <p
+            id="screenNumber2"
+            className={`screenNumber ${savePending && 'savePending'}`}
+            ref={screenNumber2}
+          >
             {patchNumber >= 10 && Math.floor((patchNumber / 10) % 10)}
           </p>
         </div>
         <div id="redPositioner3" className="redPositioner">
-          <p id="screenNumber3" className="screenNumber">
+          <p
+            id="screenNumber3"
+            className={`screenNumber ${savePending && 'savePending'}`}
+            ref={screenNumber3}
+          >
             {patchNumber >= 100 && Math.floor((patchNumber / 100) % 10)}
           </p>
         </div>
