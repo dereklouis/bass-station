@@ -7,10 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 html {
-  font-size: 10px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 code {
@@ -60,4 +72,70 @@ button {
 
 .absolute {
   position: absolute;
+}
+
+@media (max-width: 2200px), (max-height: 1225px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1950px), (max-height: 1150px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1800px), (max-height: 1075px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1650px), (max-height: 1000px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 1550px), (max-height: 900px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1350px), (max-height: 800px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 1200px), (max-height: 725px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 1050px), (max-height: 625px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 900px), (max-height: 525px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+@media (max-width: 725px), (max-height: 410px) {
+  html {
+    font-size: 4px;
+  }
+}
+
+@media (max-width: 560px), (max-height: 330px) {
+  html {
+    font-size: 3.75px;
+  }
 }
