@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import './styles/fader.css';
 
 const Fader = (props) => {
+  const { position, setPosition, setting, stagingPatch } = props;
   let faderLineArr = [];
   for (let i = 0; i < 11; i++) {
     faderLineArr.push(1);
@@ -11,7 +12,7 @@ const Fader = (props) => {
   const faderMaster = useRef(null);
   const faderAdjustActive = useRef(false);
   const clientStart = useRef(0);
-  const restingPlace = useRef(props.position);
+  const restingPlace = useRef(position);
 
   const activateFaderAdjust = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const Fader = (props) => {
   const disengageFaderAdjust = () => {
     faderAdjustActive.current = false;
     faderMaster.current.style.cursor = 'default';
-    restingPlace.current = props.position;
+    restingPlace.current = position;
   };
 
   const adjustFader = (e) => {
@@ -31,7 +32,8 @@ const Fader = (props) => {
       let amountMoved = (e.clientY - clientStart.current) * 0.09;
       let moveDifference = amountMoved + restingPlace.current;
       if (moveDifference >= -4.55 && moveDifference <= 4.45) {
-        props.setPosition(moveDifference);
+        setPosition(moveDifference);
+        stagingPatch.current[setting] = moveDifference;
       }
     }
   };
@@ -57,7 +59,7 @@ const Fader = (props) => {
         <div className="faderTrackSplit" />
         <div
           className="faderNub"
-          style={{ transform: `translateY(${props.position}rem)` }}
+          style={{ transform: `translateY(${position}rem)` }}
         >
           <div className="faderNubTop" onMouseDown={activateFaderAdjust}>
             <div className="faderNubTopLine" />

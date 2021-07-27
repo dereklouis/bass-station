@@ -1,19 +1,19 @@
-#fader1 {
+#attackFader {
   position: absolute;
   transform: translate(81.2rem, 19.5rem);
 }
 
-#fader2 {
+#decayFader {
   position: absolute;
   transform: translate(86.63rem, 19.5rem);
 }
 
-#fader3 {
+#sustainFader {
   position: absolute;
   transform: translate(92.06rem, 19.5rem);
 }
 
-#fader4 {
+#releaseFader {
   position: absolute;
   transform: translate(97.5rem, 19.5rem);
 }

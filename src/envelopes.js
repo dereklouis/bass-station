@@ -7,20 +7,26 @@ import Bulb from './bulb';
 const Envelopes = (props) => {
   const { patches, patchNumber, stagingPatch } = props;
   const [eSS, setESS] = useState(patches[patchNumber].envSelectS);
-  const [attackFader, setAttackFader] = useState(patches[patchNumber].fader1);
-  const [decayFader, setDecayFader] = useState(patches[patchNumber].fader2);
-  const [sustainFader, setSustainFader] = useState(patches[patchNumber].fader3);
-  const [releaseFader, setReleaseFader] = useState(patches[patchNumber].fader4);
+  const [attackFader, setAttackFader] = useState(
+    patches[patchNumber].attackFader
+  );
+  const [decayFader, setDecayFader] = useState(patches[patchNumber].decayFader);
+  const [sustainFader, setSustainFader] = useState(
+    patches[patchNumber].sustainFader
+  );
+  const [releaseFader, setReleaseFader] = useState(
+    patches[patchNumber].releaseFader
+  );
   const [triggeringS, setTriggeringS] = useState(
     patches[patchNumber].triggeringS
   );
 
   useEffect(() => {
     setESS(patches[patchNumber].envSelectS);
-    setAttackFader(patches[patchNumber].fader1);
-    setDecayFader(patches[patchNumber].fader2);
-    setSustainFader(patches[patchNumber].fader3);
-    setReleaseFader(patches[patchNumber].fader4);
+    setAttackFader(patches[patchNumber].attackFader);
+    setDecayFader(patches[patchNumber].decayFader);
+    setSustainFader(patches[patchNumber].sustainFader);
+    setReleaseFader(patches[patchNumber].releaseFader);
     setTriggeringS(patches[patchNumber].triggeringS);
   }, [patches, patchNumber]);
 
@@ -47,27 +53,47 @@ const Envelopes = (props) => {
       <p id="envSelectL3" className="subLabelLarge">
         Amp+Mod Env
       </p>
-      <div id="fader1">
-        <Fader position={attackFader} setPosition={setAttackFader} />
+      <div id="attackFader">
+        <Fader
+          position={attackFader}
+          setPosition={setAttackFader}
+          setting={'attackFader'}
+          stagingPatch={stagingPatch}
+        />
       </div>
       <div id="envelopesLeftLine" />
       <p id="attackL" className="subLabelLarge">
         Attack
       </p>
-      <div id="fader2">
-        <Fader position={decayFader} setPosition={setDecayFader} />
+      <div id="decayFader">
+        <Fader
+          position={decayFader}
+          setPosition={setDecayFader}
+          setting={'decayFader'}
+          stagingPatch={stagingPatch}
+        />
       </div>
       <p id="decayL" className="subLabelLarge">
         Decay
       </p>
-      <div id="fader3">
-        <Fader position={sustainFader} setPosition={setSustainFader} />
+      <div id="sustainFader">
+        <Fader
+          position={sustainFader}
+          setPosition={setSustainFader}
+          setting={'sustainFader'}
+          stagingPatch={stagingPatch}
+        />
       </div>
       <p id="sustainL" className="subLabelLarge">
         Sustain
       </p>
-      <div id="fader4">
-        <Fader position={releaseFader} setPosition={setReleaseFader} />
+      <div id="releaseFader">
+        <Fader
+          position={releaseFader}
+          setPosition={setReleaseFader}
+          setting={'releaseFader'}
+          stagingPatch={stagingPatch}
+        />
       </div>
       <p id="releaseL" className="subLabelLarge">
         Release
