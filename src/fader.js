@@ -2,12 +2,17 @@ import { useRef } from 'react';
 import './styles/fader.css';
 
 const Fader = (props) => {
-  const { position, setPosition, setting, stagingPatch } = props;
+  const { position, setPosition, setting, stagingPatch, originalLevel } = props;
   let faderLineArr = [];
   for (let i = 0; i < 11; i++) {
     faderLineArr.push(1);
   }
   const bigLines = [1, 6, 11];
+
+  let amountBackArrowLight = document.getElementById('amountBackArrowLight');
+  let amountForwardArrowLight = document.getElementById(
+    'amountForwardArrowLight'
+  );
 
   const faderMaster = useRef(null);
   const faderAdjustActive = useRef(false);
@@ -20,6 +25,10 @@ const Fader = (props) => {
     faderAdjustActive.current = true;
     clientStart.current = e.clientY;
     faderMaster.current.style.cursor = 'grabbing';
+    amountBackArrowLight = document.getElementById('amountBackArrowLight');
+    amountForwardArrowLight = document.getElementById(
+      'amountForwardArrowLight'
+    );
   };
 
   const disengageFaderAdjust = () => {
@@ -35,6 +44,16 @@ const Fader = (props) => {
       if (moveDifference >= -4.55 && moveDifference <= 4.45) {
         setPosition(moveDifference);
         stagingPatch.current[setting] = moveDifference;
+        if (originalLevel > moveDifference) {
+          amountForwardArrowLight.className = 'amountArrowLightOn';
+          amountBackArrowLight.className = 'amountArrowLightOff';
+        } else if (originalLevel < moveDifference) {
+          amountBackArrowLight.className = 'amountArrowLightOn';
+          amountForwardArrowLight.className = 'amountArrowLightOff';
+        } else if (originalLevel === moveDifference) {
+          amountBackArrowLight.className = 'amountArrowLightOff';
+          amountForwardArrowLight.className = 'amountArrowLightOff';
+        }
       }
     }
   };

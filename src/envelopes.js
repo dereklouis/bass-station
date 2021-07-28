@@ -59,6 +59,7 @@ const Envelopes = (props) => {
           setPosition={setAttackFader}
           setting={'attackFader'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].attackFader}
         />
       </div>
       <div id="envelopesLeftLine" />
@@ -71,6 +72,7 @@ const Envelopes = (props) => {
           setPosition={setDecayFader}
           setting={'decayFader'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].decayFader}
         />
       </div>
       <p id="decayL" className="subLabelLarge">
@@ -82,6 +84,7 @@ const Envelopes = (props) => {
           setPosition={setSustainFader}
           setting={'sustainFader'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].sustainFader}
         />
       </div>
       <p id="sustainL" className="subLabelLarge">
@@ -93,6 +96,7 @@ const Envelopes = (props) => {
           setPosition={setReleaseFader}
           setting={'releaseFader'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].releaseFader}
         />
       </div>
       <p id="releaseL" className="subLabelLarge">
