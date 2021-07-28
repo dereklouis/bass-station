@@ -8,7 +8,8 @@ for (let i = 0; i < 18; i++) {
 }
 
 const Knob = (props) => {
-  const { rotation, setRotation, notch, setting, stagingPatch } = props;
+  const { rotation, setRotation, notch, setting, stagingPatch, originalLevel } =
+    props;
 
   let shadowRotation = 0;
   if (rotation > 0) {
@@ -20,9 +21,17 @@ const Knob = (props) => {
   const activateKnobAdjust = (e) => {
     e.preventDefault();
     if (notch === undefined) {
-      knobSpin(e, rotation, setRotation, setting, stagingPatch);
+      knobSpin(e, rotation, setRotation, setting, stagingPatch, originalLevel);
     } else {
-      knobSpinNotch(e, rotation, setRotation, notch, setting, stagingPatch);
+      knobSpinNotch(
+        e,
+        rotation,
+        setRotation,
+        notch,
+        setting,
+        stagingPatch,
+        originalLevel
+      );
     }
   };
 

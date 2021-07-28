@@ -1,5 +1,17 @@
-export const knobSpin = (e, rotation, setRotation, setting, stagingPatch) => {
+export const knobSpin = (
+  e,
+  rotation,
+  setRotation,
+  setting,
+  stagingPatch,
+  originalLevel
+) => {
   let clientStart = null;
+
+  const amountBackArrowLight = document.getElementById('amountBackArrowLight');
+  const amountForwardArrowLight = document.getElementById(
+    'amountForwardArrowLight'
+  );
 
   clientStart = e.clientX;
   const appContainer = document.getElementById('appContainer');
@@ -14,6 +26,16 @@ export const knobSpin = (e, rotation, setRotation, setting, stagingPatch) => {
     ) {
       setRotation(moveDifference);
       stagingPatch.current[setting] = moveDifference;
+      if (originalLevel > moveDifference) {
+        amountForwardArrowLight.className = 'amountArrowLightOff';
+        amountBackArrowLight.className = 'amountArrowLightOn';
+      } else if (originalLevel < moveDifference) {
+        amountBackArrowLight.className = 'amountArrowLightOff';
+        amountForwardArrowLight.className = 'amountArrowLightOn';
+      } else if (originalLevel === moveDifference) {
+        amountBackArrowLight.className = 'amountArrowLightOff';
+        amountForwardArrowLight.className = 'amountArrowLightOff';
+      }
     }
   });
   document.addEventListener('mouseup', function () {
@@ -28,13 +50,19 @@ export const knobSpinNotch = (
   setRotation,
   notches,
   setting,
-  stagingPatch
+  stagingPatch,
+  originalLevel
 ) => {
   const notchKey = {
     4: 15,
     8: 135,
   };
   let clientStart = null;
+
+  const amountBackArrowLight = document.getElementById('amountBackArrowLight');
+  const amountForwardArrowLight = document.getElementById(
+    'amountForwardArrowLight'
+  );
 
   clientStart = e.clientX;
   const appContainer = document.getElementById('appContainer');
@@ -50,6 +78,16 @@ export const knobSpinNotch = (
       let notchedMovement = Math.floor(moveDifference / 30) * 30;
       setRotation(notchedMovement);
       stagingPatch.current[setting] = notchedMovement;
+      if (originalLevel > notchedMovement) {
+        amountForwardArrowLight.className = 'amountArrowLightOff';
+        amountBackArrowLight.className = 'amountArrowLightOn';
+      } else if (originalLevel < notchedMovement) {
+        amountBackArrowLight.className = 'amountArrowLightOff';
+        amountForwardArrowLight.className = 'amountArrowLightOn';
+      } else if (originalLevel === notchedMovement) {
+        amountBackArrowLight.className = 'amountArrowLightOff';
+        amountForwardArrowLight.className = 'amountArrowLightOff';
+      }
     }
   });
   document.addEventListener('mouseup', function () {

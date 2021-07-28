@@ -137,6 +137,7 @@ const Filters = (props) => {
           setRotation={setOverdriveKnob}
           setting={'overdriveK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].overdriveK}
         />
         <p id="overdriveKL" className="knobLabel">
           Overdrive
@@ -149,6 +150,7 @@ const Filters = (props) => {
           setRotation={setResonanceKnob}
           setting={'resonanceK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].resonanceK}
         />
         <p id="resonanceKL" className="knobLabel">
           Resonance
@@ -161,6 +163,7 @@ const Filters = (props) => {
           setRotation={setFilterMEDKnob}
           setting={'filtersMEDK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].filtersMEDK}
         />
         <p id="filtersMEDKL" className="knobLabel">
           Mod Env depth
@@ -173,6 +176,7 @@ const Filters = (props) => {
           setRotation={setFilterLFOKnob}
           setting={'filtersLFO2K'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].filtersLFO2K}
         />
         <p id="filtersLFO2KL" className="knobLabel">
           LFO 2 depth
@@ -189,6 +193,7 @@ const Filters = (props) => {
           setRotation={setFrequencyKnob}
           setting={'frequencyK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].frequencyK}
         />
         <p id="filtersFrequencyKL" className="knobLabel">
           Frequency

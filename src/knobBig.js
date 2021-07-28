@@ -8,7 +8,7 @@ for (let i = 0; i < 40; i++) {
 }
 
 const KnobBig = (props) => {
-  const { rotation, setRotation, setting, stagingPatch } = props;
+  const { rotation, setRotation, setting, stagingPatch, originalLevel } = props;
 
   let shadowRotation = 0;
   if (rotation > 0) {
@@ -19,7 +19,7 @@ const KnobBig = (props) => {
 
   const activateKnobAdjust = (e) => {
     e.preventDefault();
-    knobSpin(e, rotation, setRotation, setting, stagingPatch);
+    knobSpin(e, rotation, setRotation, setting, stagingPatch, originalLevel);
   };
 
   return (

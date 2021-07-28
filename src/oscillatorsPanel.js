@@ -53,6 +53,7 @@ const Oscillators = (props) => {
           setRotation={setCoarseKnob}
           setting={'coarseK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].coarseK}
         />
         <p id="coarseKL" className="knobLabel">
           Coarse
@@ -65,6 +66,7 @@ const Oscillators = (props) => {
           setRotation={setFineKnob}
           setting={'fineK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].fineK}
         />
         <p id="fineKL" className="knobLabel">
           Fine
@@ -77,6 +79,7 @@ const Oscillators = (props) => {
           setRotation={setMEDKnob}
           setting={'MEDK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].MEDK}
         />
         <p id="MEDKL" className="knobLabel">
           Mod Env depth
@@ -89,6 +92,7 @@ const Oscillators = (props) => {
           setRotation={setOSCLFO1Knob}
           setting={'LFO1K'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].LFO1K}
         />
         <p id="LFO1KL" className="knobLabel">
           LFO 1 depth
@@ -101,6 +105,7 @@ const Oscillators = (props) => {
           setRotation={setPulseWidthKnob}
           setting={'pulseWidthK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].pulseWidthK}
         />
         <p id="pulseWidthKL" className="knobLabel">
           Pulse Width

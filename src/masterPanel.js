@@ -14,6 +14,9 @@ const MasterPanel = (props) => {
   const screenNumber2 = useRef(null);
   const screenNumber3 = useRef(null);
 
+  const lessThan = useRef(null);
+  const greaterThan = useRef(null);
+
   useEffect(() => {
     setVolumeKnob(patches[patchNumber].volumeK);
   }, [patches, patchNumber]);
@@ -74,8 +77,22 @@ const MasterPanel = (props) => {
         </div>
         <div id="amountBackArrow" />
         <div id="amountForwardArrow" />
-        <div id="amountBackArrowLight" className="amountArrowLightOff" />
-        <div id="amountForwardArrowLight" className="amountArrowLightOff" />
+        <div
+          id="amountBackArrowLight"
+          className="amountArrowLightOff"
+          ref={lessThan}
+          onAnimationEnd={() => {
+            lessThan.current.className = 'amountArrowLightOff';
+          }}
+        />
+        <div
+          id="amountForwardArrowLight"
+          className="amountArrowLightOff"
+          ref={greaterThan}
+          onAnimationEnd={() => {
+            greaterThan.current.className = 'amountArrowLightOff';
+          }}
+        />
       </div>
       <div id="volumeK" className="knobDiv">
         <KnobBorder highNoon={false} />

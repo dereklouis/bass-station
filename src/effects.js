@@ -24,6 +24,7 @@ const Effects = (props) => {
           setRotation={setDistortionKnob}
           setting={'distortionK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].distortionK}
         />
         <p id="distortionKL" className="knobLabel">
           Distortion
@@ -36,6 +37,7 @@ const Effects = (props) => {
           setRotation={setOFMKnob}
           setting={'oFMK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].oFMK}
         />
         <p id="oFMKL" className="knobLabel">
           Osc Filter Mod

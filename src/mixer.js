@@ -29,6 +29,7 @@ const Mixer = (props) => {
           setRotation={setOSC1Knob}
           setting={'mixerOsc1K'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].mixerOsc1K}
         />
         <p id="mixerOsc1KL" className="knobLabel">
           Osc 1
@@ -41,6 +42,7 @@ const Mixer = (props) => {
           setRotation={setOSC2Knob}
           setting={'mixerOsc2K'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].mixerOsc2K}
         />
         <p id="mixerOsc2KL" className="knobLabel">
           Osc 2
@@ -53,6 +55,7 @@ const Mixer = (props) => {
           setRotation={setSubOscKnob}
           setting={'mixerSubK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].mixerSubK}
         />
         <p id="mixerSubKL" className="knobLabel">
           Sub Osc
@@ -65,6 +68,7 @@ const Mixer = (props) => {
           setRotation={setERNKnob}
           setting={'mixerUtilityK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].mixerUtilityK}
         />
       </div>
       <div id="mixerUtilityBox" />

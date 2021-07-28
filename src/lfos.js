@@ -87,6 +87,7 @@ const LFOS = (props) => {
           setRotation={setLFO1Knob}
           setting={'lfosLFO1K'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].lfosLFO1K}
         />
       </div>
       <div id="speedDelayS">
@@ -105,6 +106,7 @@ const LFOS = (props) => {
           setRotation={setLFO2Knob}
           setting={'lfosLFO2K'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].lfosLFO2K}
         />
       </div>
       <p id="lfosRightTriL" className="subLabelSmall">

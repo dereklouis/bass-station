@@ -99,6 +99,7 @@ const Arpeggiator = (props) => {
           setRotation={setRhythmKnob}
           setting={'rhythmK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].rhythmK}
         />
         <p id="rhythmKL" className="knobLabel">
           Rhythm
@@ -118,6 +119,7 @@ const Arpeggiator = (props) => {
           notch={8}
           setting={'rhythm2K'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].rhythm2K}
         />
       </div>
       <p id="arpUpL" className="subLabelLarge">
@@ -152,6 +154,7 @@ const Arpeggiator = (props) => {
           notch={4}
           setting={'arpOctavesK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].arpOctavesK}
         />
       </div>
       <p id="AO1L" className="subLabelLarge">

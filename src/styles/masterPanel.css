@@ -254,7 +254,21 @@
   background-color: #262630;
 }
 
+@keyframes amountArrowLightOn {
+  0% {
+    background-color: #fc4e70;
+    box-shadow: 0rem 0rem 0.8rem #fc4e70, 0rem 0rem 2rem #fc4e70;
+  }
+  99% {
+    background-color: #fc4e70;
+    box-shadow: 0rem 0rem 0.8rem #fc4e70, 0rem 0rem 2rem #fc4e70;
+  }
+  100% {
+    background-color: #262630;
+    box-shadow: none;
+  }
+}
+
 .amountArrowLightOn {
-  background-color: #fc4e70;
-  box-shadow: 0rem 0rem 0.8rem #fc4e70, 0rem 0rem 2rem #fc4e70;
+  animation: amountArrowLightOn 2.1s step-start 0s 1 normal forwards;
 }

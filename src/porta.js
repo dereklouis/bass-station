@@ -22,6 +22,7 @@ const Porta = (props) => {
           setRotation={setGlideTimeKnob}
           setting={'glideTimeK'}
           stagingPatch={stagingPatch}
+          originalLevel={patches[patchNumber].glideTimeK}
         />
         <p id="glideTimeKL" className="knobLabel">
           Glide Time
