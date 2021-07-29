@@ -12,7 +12,7 @@ import Mixer from './mixer';
 import Filters from './filters';
 import Arpeggiator from './arpeggiator';
 import Porta from './porta';
-import Lfos from './lFOS';
+import Lfos from './lfos';
 import Envelopes from './envelopes';
 import Effects from './effects';
 import MidBar from './midBar';
