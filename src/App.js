@@ -24,7 +24,8 @@ import * as Tone from 'tone';
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
   const [patches, setPatches] = useState(defaultPatches);
-  const stagingPatch = useRef(patchTemplate);  //create a synth and connect it to the main output (your speakers)
+  const stagingPatch = useRef(patchTemplate);
+
   const synth = new Tone.Synth().toDestination();
 
   return (
