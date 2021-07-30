@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import './styles/blackKey.css';
 
-const BlackKey = () => {
+const BlackKey = ({ note, instrument, octave }) => {
   const backKeyMasterInsetShadow = useRef(null);
   const blackKeyConnector = useRef(null);
   const blackKeyBottom = useRef(null);
@@ -19,8 +19,10 @@ const BlackKey = () => {
     blackKeyBottom.current.className = 'blackKeyBottomUp';
   };
 
+  const playNote = () => instrument.triggerAttackRelease(`${note}${octave}`, '8n');
+
   return (
-    <div className="blackKeyMaster" onMouseDown={keyDown} onMouseUp={keyUp}>
+    <div className="blackKeyMaster" onMouseDown={keyDown} onMouseUp={keyUp} onClick={playNote}>
       <div className="blackKey">
         <div className="blackKeyTopUp" />
         <div

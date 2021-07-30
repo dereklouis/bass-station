@@ -12,18 +12,20 @@ import Mixer from './mixer';
 import Filters from './filters';
 import Arpeggiator from './arpeggiator';
 import Porta from './porta';
-import Lfos from './lFOS';
+import Lfos from './lfos';
 import Envelopes from './envelopes';
 import Effects from './effects';
 import MidBar from './midBar';
 import KeysTopper from './keysTopper';
 import OPM from './oPM';
 import Keyboard from './keyboard';
+import * as Tone from 'tone';
 
 function App() {
   const [patchNumber, setPatchNumber] = useState(0);
   const [patches, setPatches] = useState(defaultPatches);
-  const stagingPatch = useRef(patchTemplate);
+  const stagingPatch = useRef(patchTemplate);  //create a synth and connect it to the main output (your speakers)
+  const synth = new Tone.Synth().toDestination();
 
   return (
     <div id="appContainer">
@@ -80,7 +82,7 @@ function App() {
         <MidBar />
         <KeysTopper />
         <OPM />
-        <Keyboard />
+        <Keyboard instrument={synth} />
         <div id="masterShadowRight" />
       </div>
     </div>

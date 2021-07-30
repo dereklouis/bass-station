@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './styles/lFOS.css';
+import './styles/lfos.css';
 import Knob from './knob';
 import KnobBorder from './knobBorder';
 import Bulb from './bulb';
