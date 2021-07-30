@@ -5,6 +5,8 @@ const BlackKey = ({ note, instrument, octave }) => {
   const backKeyMasterInsetShadow = useRef(null);
   const blackKeyConnector = useRef(null);
   const blackKeyBottom = useRef(null);
+  const urlParams = new URLSearchParams(window.location.search);
+  const shouldPlaySound = urlParams.get('playSound')
 
   const keyDown = () => {
     backKeyMasterInsetShadow.current.className =
@@ -22,7 +24,7 @@ const BlackKey = ({ note, instrument, octave }) => {
   const playNote = () => instrument.triggerAttackRelease(`${note}${octave}`, '8n');
 
   return (
-    <div className="blackKeyMaster" onMouseDown={keyDown} onMouseUp={keyUp} onClick={playNote}>
+    <div className="blackKeyMaster" onMouseDown={keyDown} onMouseUp={keyUp} onClick={shouldPlaySound && playNote}>
       <div className="blackKey">
         <div className="blackKeyTopUp" />
         <div
