@@ -4,6 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+if (window.location.host === 'bass-station-ii.web.app') {
+  if (
+    window.location.protocol === 'http' ||
+    window.location.protocol === 'http:'
+  ) {
+    window.location.protocol = 'https';
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
