@@ -12,7 +12,7 @@ import Mixer from './mixer';
 import Filters from './filters';
 import Arpeggiator from './arpeggiator';
 import Porta from './porta';
-import Lfos from './lFOS';
+import LFOS from './lfos';
 import Envelopes from './envelopes';
 import Effects from './effects';
 import MidBar from './midBar';
@@ -62,7 +62,7 @@ function App() {
           patchNumber={patchNumber}
           stagingPatch={stagingPatch}
         />
-        <Lfos
+        <LFOS
           patches={patches}
           patchNumber={patchNumber}
           stagingPatch={stagingPatch}
